@@ -21,11 +21,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egs-Ok-cAr" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9wB-ah-C22" customClass="InfoView" customModule="TinkoffApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="467" width="375" height="200"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="NIc-8C-mKn" appends="YES" id="Pig-pr-cPH"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWm-wG-HRx">
                                 <rect key="frame" x="311.5" y="36" width="47.5" height="103.5"/>
@@ -102,7 +106,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9wB-ah-C22" secondAttribute="trailing" id="8ql-Bn-aDQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="egs-Ok-cAr" secondAttribute="trailing" id="92P-yt-1gC"/>
                             <constraint firstItem="qGe-c4-imm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="95Z-gs-R4u"/>
-                            <constraint firstItem="egs-Ok-cAr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9ur-e2-kgc"/>
+                            <constraint firstItem="egs-Ok-cAr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-20" id="9ur-e2-kgc"/>
                             <constraint firstItem="9wB-ah-C22" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="FXU-Gb-8EN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9wB-ah-C22" secondAttribute="bottom" id="Hwu-Fm-CcQ"/>
                             <constraint firstItem="fWm-wG-HRx" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="Ioi-5k-ElB"/>
@@ -145,6 +149,7 @@
                         <outlet property="balanceincreaseViewController" destination="BYZ-38-t0r" id="GDz-bj-030"/>
                     </connections>
                 </customObject>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="NIc-8C-mKn"/>
             </objects>
             <point key="canvasLocation" x="277.60000000000002" y="33.733133433283363"/>
         </scene>

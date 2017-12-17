@@ -106,10 +106,6 @@ class NetworkService {
 
         URLSession.shared.dataTask(with: request) { data, response, error in
 
-            print(data)
-            print(error)
-            print(response)
-
             guard
                 error == nil,
                 let data = data,

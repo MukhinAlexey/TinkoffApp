@@ -13,11 +13,12 @@ class PointsModuleConfigurator {
         let presenter = PointsPresenter()
         presenter.view = viewController
 
-        let networkServiceConfig = NetworkServiceConfig(partnersListURL: AppConstant.partnersURL,
-                                                        pointsURL: AppConstant.pointsURL)
+        let networkServiceConfig = NetworkServiceConfig(partnersListURL: AppConfig.partnersURL,
+                                                        pointsURL: AppConfig.pointsURL)
         let networkService = NetworkService(config: networkServiceConfig)
 
-        let imageDownloaderConfig = ImageDownloaderServiceConfig(downloadImagesURL: AppConstant.downloadImagesURL, placeholderImageName: "ImagePlaceholder")
+        let imageDownloaderConfig = ImageDownloadServiceConfig(downloadImagesURL: AppConfig.downloadImagesURL,
+                                                               placeholderImageName: "ImagePlaceholder")
         let imageDownloaderService = ImageDownloadService(config: imageDownloaderConfig,
                                                             networkService: networkService)
 

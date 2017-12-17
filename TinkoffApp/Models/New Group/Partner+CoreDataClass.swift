@@ -34,7 +34,7 @@ extension Partner {
         partner.name = name
         partner.picture = picture
 
-        return partnerOptional
+        return partner
     }
 
     static func update(withId id: String,

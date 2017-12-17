@@ -9,7 +9,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        GMSServices.provideAPIKey(AppConstant.googleMapsKey)
+        GMSServices.provideAPIKey(AppConfig.googleMapsKey)
         return true
     }
 
@@ -26,6 +26,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        //CoreDataService.shared.performSave(in: , completionHandler: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
     }
 }

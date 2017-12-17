@@ -20,45 +20,36 @@ class PointsViewController: UIViewController {
 
     var pointsOnMap = [PointPresentation]()
     var partners = [PartnerPresentation]()
-    
-    var isInfoViewShown = false {
-        didSet {
-            if isInfoViewShown {
-                showInfoView()
-            } else {
-                hideInfoView()
-            }
-        }
-    }
+
+    var showingInfoViewIsInProgress = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
-
         hideInfoView()
         output.viewIsReady()
     }
 
     private func showInfoView() {
         infoViewBottomConstraint.constant = 0.0
-        UIView.animate(withDuration: 0.3) {
-            let mapViewFrame = self.mapView.frame
+        let mapViewFrame = self.mapView.frame
+        animateMapInset(withBottomInset: mapViewFrame.size.height / 3.0)
+        animateLayout()
+    }
+
+    private func animateMapInset(withBottomInset bottomInset: CGFloat) {
+        UIView.animate(withDuration: 0.2) {
             self.mapView.padding = UIEdgeInsets(top: 0,
                                                 left: 0,
-                                                bottom: mapViewFrame.size.height / 3,
+                                                bottom: bottomInset,
                                                 right: 0)
         }
-        animateLayout()
     }
 
     private func hideInfoView() {
         infoViewBottomConstraint.constant = -300.0
-        UIView.animate(withDuration: 0.3) {
-            self.mapView.padding = UIEdgeInsets(top: 0,
-                                                left: 0,
-                                                bottom: 0,
-                                                right: 0)
-        }
+        infoView.image = nil
+        animateMapInset(withBottomInset: 0)
         animateLayout()
     }
 
@@ -103,7 +94,7 @@ extension PointsViewController: PointsPresenterOutput {
 
     func didUpdate(_ coordinates: CLLocationCoordinate2D) {
         mapView.animate(to: GMSCameraPosition(target: coordinates,
-                                              zoom: AppConstant.initMapZoom,
+                                              zoom: AppConfig.initMapZoom,
                                               bearing: 0,
                                               viewingAngle: 0))
     }
@@ -158,14 +149,17 @@ extension PointsViewController: GMSMapViewDelegate {
         statusLabel.set("Загрузка")
         DispatchQueue.main.async {
             self.hideLegend()
-            self.hideInfoView()
         }
     }
 
     func mapView(_ mapView: GMSMapView,
                  idleAt position: GMSCameraPosition) {
         showLegend()
-        isInfoViewShown = false
+
+        if !showingInfoViewIsInProgress {
+            hideInfoView()
+        }
+        showingInfoViewIsInProgress = false
 
         guard mapView.camera.zoom >= 15.0 else {
             mapView.clear()
@@ -185,10 +179,9 @@ extension PointsViewController: GMSMapViewDelegate {
 
     func mapView(_ mapView: GMSMapView,
                  didTap marker: GMSMarker) -> Bool {
-        if !isInfoViewShown {
-            isInfoViewShown = true
-        }
-        //didUpdate(marker.position)
+        self.showInfoView()
+        showingInfoViewIsInProgress = true
+        didUpdate(marker.position)
         let point = pointsOnMap.first(where: {
             $0.marker == marker
         })!
@@ -202,7 +195,6 @@ extension PointsViewController: GMSMapViewDelegate {
     }
 
     func mapView(_ mapView: GMSMapView, didTap overlay: GMSOverlay) {
-        isInfoViewShown = false
-        showLegend()
+        //showLegend()
     }
 }

@@ -2,11 +2,11 @@ import UIKit
 
 class ImageDownloadService: NSObject {
 
-    private let config: ImageDownloaderServiceConfig
+    private let config: ImageDownloadServiceConfig
     private let networkService: NetworkService
     private let reachability = Reachability()!
 
-    init(config: ImageDownloaderServiceConfig, networkService: NetworkService) {
+    init(config: ImageDownloadServiceConfig, networkService: NetworkService) {
         self.config = config
         self.networkService = networkService
     }
@@ -15,7 +15,7 @@ class ImageDownloadService: NSObject {
                        withLastModified lastModified: String?,
                        withPixelSize pixelSize: String,
                        completition: @escaping (UIImage?, String?, Error?) -> Void) {
-        print("Download Started")
+        print("[INFO] НАЧАЛОСЬ ПОЛУЧЕНИЕ КАРТИНКИ")
 
         var lastModifiedToSend: String
 
@@ -28,7 +28,8 @@ class ImageDownloadService: NSObject {
         let url = config.downloadImagesURL.appending("\(pixelSize)/\(name)")
 
         guard  reachability.connection != .none else {
-            return completition(getImageData(with: name), nil, nil)
+            print("[INFO] КАРТИНКА ПОЛУЧЕНА ОФФЛАЙ")
+            return completition(getImageData(with: name), lastModifiedToSend, nil)
         }
 
         networkService.makeCall(withMethod: "GET",
@@ -37,7 +38,8 @@ class ImageDownloadService: NSObject {
         { imageData, headers, error in
 
             if (imageData == nil && headers == nil && error == nil) {
-                print("КАРТИНКА НЕ ОБНОВЛЯЛАСЬ")
+                print("[INFO] КАРТИНКА НЕ ОБНОВЛЯЛАСЬ")
+                print("[INFO] ЗАКОНЧИЛОСЬ ПОЛУЧЕНИЕ КАРТИНКИ")
                 return completition(self.getImageData(with: name), lastModifiedToSend, nil)
             }
 
@@ -48,7 +50,7 @@ class ImageDownloadService: NSObject {
                 else {
                     return completition(nil, nil, TinkoffError.cantGetPictureError)
             }
-            print("Download Finished")
+            print("[INFO] ЗАКОНЧИЛОСЬ ПОЛУЧЕНИЕ КАРТИНКИ")
             self.save(imageData, withName: name)
             completition(UIImage(data: imageData), headers["Last-Modified"] as! String, error)
         }
@@ -74,10 +76,8 @@ class ImageDownloadService: NSObject {
         let fileManager = FileManager.default
         let imagePath = (self.getDirectoryPath() as NSString).appendingPathComponent(name)
         if fileManager.fileExists(atPath: imagePath) {
-            print("ФАЙЛ СУЩЕСТВУЕТ")
             return UIImage(contentsOfFile: imagePath)
         } else {
-            print("ФАЙЛ НЕ СУЩЕСТВУЕТ")
             return nil
         }
     }

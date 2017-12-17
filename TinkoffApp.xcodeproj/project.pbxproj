@@ -28,7 +28,7 @@
 		8AA0776A1FE68E0900F94432 /* PointsInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA077691FE68E0900F94432 /* PointsInteractorInput.swift */; };
 		8AB3C1561FE27DF000BAE5C0 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3C1551FE27DF000BAE5C0 /* CoreDataService.swift */; };
 		8AB3C15F1FE2892700BAE5C0 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3C15E1FE2892700BAE5C0 /* AppConstant.swift */; };
-		8AB3C1611FE28A2100BAE5C0 /* ImageDownloaderServiceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3C1601FE28A2100BAE5C0 /* ImageDownloaderServiceConfig.swift */; };
+		8AB3C1611FE28A2100BAE5C0 /* ImageDownloadServiceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3C1601FE28A2100BAE5C0 /* ImageDownloadServiceConfig.swift */; };
 		8AB3C1641FE28D4600BAE5C0 /* PointsPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3C1631FE28D4600BAE5C0 /* PointsPresenterOutput.swift */; };
 		8AB3C1681FE2918D00BAE5C0 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8AB3C1671FE2918D00BAE5C0 /* .swiftlint.yml */; };
 		8AB3C16A1FE2A80200BAE5C0 /* PointPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3C1691FE2A80200BAE5C0 /* PointPresentation.swift */; };
@@ -45,7 +45,7 @@
 		8ACADBAF1FE6EA7100F1F378 /* PointService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACADBAE1FE6EA7100F1F378 /* PointService.swift */; };
 		8ACADBB21FE6EA8400F1F378 /* PartnerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACADBB11FE6EA8400F1F378 /* PartnerService.swift */; };
 		8ACADBB41FE6EECB00F1F378 /* ImageDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACADBB31FE6EECB00F1F378 /* ImageDownloadService.swift */; };
-		8AF1CC731FE50A9D00D67198 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF1CC721FE50A9D00D67198 /* GoogleMaps.framework */; };
+		8ACADBBA1FE711EA00F1F378 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ACADBB91FE711EA00F1F378 /* GoogleMaps.framework */; };
 		8AF1CC771FE50F9A00D67198 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF1CC761FE50F9A00D67198 /* InfoView.swift */; };
 		8AF1CC791FE50FA500D67198 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AF1CC781FE50FA500D67198 /* InfoView.xib */; };
 		8AF1CC7B1FE50FCC00D67198 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF1CC7A1FE50FCC00D67198 /* BaseView.swift */; };
@@ -56,11 +56,9 @@
 		8AF791C71FE4A6560074290C /* PointMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF791C61FE4A6560074290C /* PointMapper.swift */; };
 		96E4DE68229A4023A0ED411B /* Pods_TinkoffApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4CB07CB6BD417763202B519 /* Pods_TinkoffApp.framework */; };
 		A525639C296DA588F03B6518 /* PointsPresenterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C111F75BCCF06C9E966D4040 /* PointsPresenterInput.swift */; };
-		ADA32598C28D195AE19980FB /* Pods_TinkoffAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137F32059BD285519DFB84B8 /* Pods_TinkoffAppTests.framework */; };
 		CC2FB96FFCF05FB5D835DE4C /* BalanceIncreaseRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E44668D5276D1CA0A6B474 /* BalanceIncreaseRouterTests.swift */; };
 		D7A0DDF34457D3440FDDCF0B /* PointsIncreaseInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69DA28DD4F99CBDF67D8DA9 /* PointsIncreaseInitializer.swift */; };
 		F162F60CF3C6BBAC629710E8 /* PointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAAABABD049FDD1D8152D86 /* PointsViewController.swift */; };
-		F3A1F62266826DEA619BEF1E /* Pods_TinkoffAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DC4E3A439A6663DD8D310F /* Pods_TinkoffAppUITests.framework */; };
 		FBE6C6F044F5758D679AD591 /* PointsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360508DACC6DF0CF7417B644 /* PointsPresenter.swift */; };
 /* End PBXBuildFile section */
 
@@ -82,7 +80,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		137F32059BD285519DFB84B8 /* Pods_TinkoffAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinkoffAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C6F39F2FBC467EBF2D4DE8A /* Pods-TinkoffAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinkoffAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinkoffAppUITests/Pods-TinkoffAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1EC5DAE20221A63366236DD3 /* BalanceIncreasePresenterTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BalanceIncreasePresenterTests.swift; sourceTree = "<group>"; };
 		360508DACC6DF0CF7417B644 /* PointsPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PointsPresenter.swift; sourceTree = "<group>"; };
@@ -113,7 +110,7 @@
 		8AA077691FE68E0900F94432 /* PointsInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsInteractorInput.swift; sourceTree = "<group>"; };
 		8AB3C1551FE27DF000BAE5C0 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		8AB3C15E1FE2892700BAE5C0 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
-		8AB3C1601FE28A2100BAE5C0 /* ImageDownloaderServiceConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderServiceConfig.swift; sourceTree = "<group>"; };
+		8AB3C1601FE28A2100BAE5C0 /* ImageDownloadServiceConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadServiceConfig.swift; sourceTree = "<group>"; };
 		8AB3C1631FE28D4600BAE5C0 /* PointsPresenterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsPresenterOutput.swift; sourceTree = "<group>"; };
 		8AB3C1671FE2918D00BAE5C0 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		8AB3C1691FE2A80200BAE5C0 /* PointPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointPresentation.swift; sourceTree = "<group>"; };
@@ -130,8 +127,8 @@
 		8ACADBAE1FE6EA7100F1F378 /* PointService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointService.swift; sourceTree = "<group>"; };
 		8ACADBB11FE6EA8400F1F378 /* PartnerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerService.swift; sourceTree = "<group>"; };
 		8ACADBB31FE6EECB00F1F378 /* ImageDownloadService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadService.swift; sourceTree = "<group>"; };
+		8ACADBB91FE711EA00F1F378 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		8AF1CC701FE50A8A00D67198 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Pods/GoogleMaps/Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
-		8AF1CC721FE50A9D00D67198 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Pods/GoogleMaps/Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
 		8AF1CC761FE50F9A00D67198 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		8AF1CC781FE50FA500D67198 /* InfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
 		8AF1CC7A1FE50FCC00D67198 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
@@ -141,7 +138,6 @@
 		8AF791C21FE48E9C0074290C /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		8AF791C61FE4A6560074290C /* PointMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointMapper.swift; sourceTree = "<group>"; };
 		92DF47F2AEEFD579772D25EB /* Pods-TinkoffAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinkoffAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinkoffAppTests/Pods-TinkoffAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		96DC4E3A439A6663DD8D310F /* Pods_TinkoffAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinkoffAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4CB07CB6BD417763202B519 /* Pods_TinkoffApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinkoffApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B757463DB71B4AD03D52FC61 /* BalanceIncreaseViewTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BalanceIncreaseViewTests.swift; sourceTree = "<group>"; };
 		C111F75BCCF06C9E966D4040 /* PointsPresenterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PointsPresenterInput.swift; sourceTree = "<group>"; };
@@ -157,7 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AF1CC731FE50A9D00D67198 /* GoogleMaps.framework in Frameworks */,
+				8ACADBBA1FE711EA00F1F378 /* GoogleMaps.framework in Frameworks */,
 				96E4DE68229A4023A0ED411B /* Pods_TinkoffApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,7 +162,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADA32598C28D195AE19980FB /* Pods_TinkoffAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,7 +169,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3A1F62266826DEA619BEF1E /* Pods_TinkoffAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +267,7 @@
 			children = (
 				8AB3C17D1FE2CDA200BAE5C0 /* Storyboards */,
 				8AB3C1741FE2CB0F00BAE5C0 /* CustomViews */,
-				8AB3C15D1FE2891000BAE5C0 /* Constants */,
+				8AB3C15D1FE2891000BAE5C0 /* Configs */,
 				8AB3C15B1FE288D200BAE5C0 /* Utils */,
 				8AB3C1591FE27E0D00BAE5C0 /* Models */,
 				8AB3C1521FE27DC900BAE5C0 /* Services */,
@@ -412,14 +406,14 @@
 			path = Logger;
 			sourceTree = "<group>";
 		};
-		8AB3C15D1FE2891000BAE5C0 /* Constants */ = {
+		8AB3C15D1FE2891000BAE5C0 /* Configs */ = {
 			isa = PBXGroup;
 			children = (
 				8AB3C15E1FE2892700BAE5C0 /* AppConstant.swift */,
-				8AB3C1601FE28A2100BAE5C0 /* ImageDownloaderServiceConfig.swift */,
-				8AB3C1721FE2BEEF00BAE5C0 /* NetworkServiceConfig.swift */,
+				8ACADBB61FE70A4000F1F378 /* NetworkService */,
+				8ACADBB51FE70A1E00F1F378 /* ImageDownloadService */,
 			);
-			path = Constants;
+			path = Configs;
 			sourceTree = "<group>";
 		};
 		8AB3C1621FE28D2800BAE5C0 /* Output */ = {
@@ -517,6 +511,22 @@
 				8ACADBAE1FE6EA7100F1F378 /* PointService.swift */,
 			);
 			path = Point;
+			sourceTree = "<group>";
+		};
+		8ACADBB51FE70A1E00F1F378 /* ImageDownloadService */ = {
+			isa = PBXGroup;
+			children = (
+				8AB3C1601FE28A2100BAE5C0 /* ImageDownloadServiceConfig.swift */,
+			);
+			path = ImageDownloadService;
+			sourceTree = "<group>";
+		};
+		8ACADBB61FE70A4000F1F378 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				8AB3C1721FE2BEEF00BAE5C0 /* NetworkServiceConfig.swift */,
+			);
+			path = NetworkService;
 			sourceTree = "<group>";
 		};
 		8AF1CC741FE50F7E00D67198 /* InfoView */ = {
@@ -632,11 +642,9 @@
 		E229CA6C986CC28BBF22AABA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8AF1CC721FE50A9D00D67198 /* GoogleMaps.framework */,
+				8ACADBB91FE711EA00F1F378 /* GoogleMaps.framework */,
 				8AF1CC701FE50A8A00D67198 /* GoogleMapsBase.framework */,
 				A4CB07CB6BD417763202B519 /* Pods_TinkoffApp.framework */,
-				137F32059BD285519DFB84B8 /* Pods_TinkoffAppTests.framework */,
-				96DC4E3A439A6663DD8D310F /* Pods_TinkoffAppUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -969,7 +977,7 @@
 				FBE6C6F044F5758D679AD591 /* PointsPresenter.swift in Sources */,
 				8AB3C1731FE2BEEF00BAE5C0 /* NetworkServiceConfig.swift in Sources */,
 				83C7B8A2F5075904B3A4B3EB /* PointsInteractorOutput.swift in Sources */,
-				8AB3C1611FE28A2100BAE5C0 /* ImageDownloaderServiceConfig.swift in Sources */,
+				8AB3C1611FE28A2100BAE5C0 /* ImageDownloadServiceConfig.swift in Sources */,
 				8AF791C11FE44D160074290C /* CoreDataStack.swift in Sources */,
 				8AF1CC771FE50F9A00D67198 /* InfoView.swift in Sources */,
 				8ACADBB21FE6EA8400F1F378 /* PartnerService.swift in Sources */,
@@ -1168,6 +1176,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/GoogleMaps/Base/Frameworks",
 					"$(PROJECT_DIR)/Pods/GoogleMaps/Maps/Frameworks",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TinkoffApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1189,6 +1198,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/GoogleMaps/Base/Frameworks",
 					"$(PROJECT_DIR)/Pods/GoogleMaps/Maps/Frameworks",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TinkoffApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

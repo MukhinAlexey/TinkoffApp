@@ -24,9 +24,9 @@ extension CoreDataService {
                     continue
                 }
                 partnersObject.append(partnerObject)
+                completition(partnersObject, nil)
+                self.coreDataStack.performSave(in: self.coreDataStack.saveContext, completionHandler: nil)
             }
-            completition(partnersObject, nil)
-            self.coreDataStack.performSave(in: self.coreDataStack.saveContext, completionHandler: nil)
         }
     }
 

@@ -39,7 +39,6 @@ extension PointsInteractor: PointsInteractorInput {
             }
 
             self.coreDataService.savePartners(partners, completition: self.returnToView(_:error:))
-
         }
     }
 
