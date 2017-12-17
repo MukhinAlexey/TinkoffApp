@@ -7,7 +7,25 @@
 		<key>TinkoffApp.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>3</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>8A3043891FE1D2C500718AB1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8A3043A01FE1D2C600718AB1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8A3043AB1FE1D2C600718AB1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

@@ -1,11 +1,3 @@
-//
-//  TinkoffAppTests.swift
-//  TinkoffAppTests
-//
-//  Created by alexey on 14.12.2017.
-//  Copyright © 2017 AlexeyMukhin. All rights reserved.
-//
-
 import XCTest
 @testable import TinkoffApp
 

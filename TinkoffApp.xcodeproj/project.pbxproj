@@ -7,14 +7,59 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EBD08B2EBCB038EC11D3169 /* BalanceIncreasePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC5DAE20221A63366236DD3 /* BalanceIncreasePresenterTests.swift */; };
+		26E180BF2CE45144CDFB8C44 /* BalanceIncreaseViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B757463DB71B4AD03D52FC61 /* BalanceIncreaseViewTests.swift */; };
+		367C54BC261A4C36E72D8CD3 /* PointsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C42EB5850FABEBF234A4772 /* PointsConfigurator.swift */; };
+		3A6B2CF0EB5BCB4D3CEBB3B4 /* BalanceIncreaseViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AAC2C9084C04884C0C4DB9 /* BalanceIncreaseViewOutput.swift */; };
+		67DED2D369AFE54E8CD8EF61 /* BalanceIncreaseConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B258B81663CB3A576037BF /* BalanceIncreaseConfiguratorTests.swift */; };
+		83C7B8A2F5075904B3A4B3EB /* PointsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214C7D73A289CB5EABC3820 /* PointsInteractorOutput.swift */; };
+		85A137B230909E3E82BC466F /* BalanceIncreaseInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D6B21320223DBE16265378 /* BalanceIncreaseInteractorTests.swift */; };
 		8A30438E1FE1D2C500718AB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A30438D1FE1D2C500718AB1 /* AppDelegate.swift */; };
-		8A3043901FE1D2C500718AB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A30438F1FE1D2C500718AB1 /* ViewController.swift */; };
 		8A3043931FE1D2C500718AB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A3043911FE1D2C500718AB1 /* Main.storyboard */; };
 		8A3043961FE1D2C500718AB1 /* TinkoffApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8A3043941FE1D2C500718AB1 /* TinkoffApp.xcdatamodeld */; };
 		8A3043981FE1D2C500718AB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A3043971FE1D2C500718AB1 /* Assets.xcassets */; };
 		8A30439B1FE1D2C500718AB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A3043991FE1D2C500718AB1 /* LaunchScreen.storyboard */; };
 		8A3043A61FE1D2C600718AB1 /* TinkoffAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3043A51FE1D2C600718AB1 /* TinkoffAppTests.swift */; };
 		8A3043B11FE1D2C600718AB1 /* TinkoffAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3043B01FE1D2C600718AB1 /* TinkoffAppUITests.swift */; };
+		8AA0775E1FE5A98900F94432 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA0775D1FE5A98900F94432 /* Reachability.swift */; };
+		8AA077611FE6701700F94432 /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA077601FE6701700F94432 /* LabelView.swift */; };
+		8AA077631FE6702100F94432 /* LabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA077621FE6702100F94432 /* LabelView.xib */; };
+		8AA077651FE68D6A00F94432 /* PointsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA077641FE68D6A00F94432 /* PointsInteractor.swift */; };
+		8AA0776A1FE68E0900F94432 /* PointsInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA077691FE68E0900F94432 /* PointsInteractorInput.swift */; };
+		8AB3C1561FE27DF000BAE5C0 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3C1551FE27DF000BAE5C0 /* CoreDataService.swift */; };
+		8AB3C1581FE27E0000BAE5C0 /* ImageDownloaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3C1571FE27E0000BAE5C0 /* ImageDownloaderService.swift */; };
+		8AB3C15F1FE2892700BAE5C0 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3C15E1FE2892700BAE5C0 /* AppConstant.swift */; };
+		8AB3C1611FE28A2100BAE5C0 /* ImageDownloaderServiceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3C1601FE28A2100BAE5C0 /* ImageDownloaderServiceConfig.swift */; };
+		8AB3C1641FE28D4600BAE5C0 /* PointsPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3C1631FE28D4600BAE5C0 /* PointsPresenterOutput.swift */; };
+		8AB3C1681FE2918D00BAE5C0 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8AB3C1671FE2918D00BAE5C0 /* .swiftlint.yml */; };
+		8AB3C16A1FE2A80200BAE5C0 /* PointPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3C1691FE2A80200BAE5C0 /* PointPresentation.swift */; };
+		8AB3C16C1FE2A82D00BAE5C0 /* PartnerPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3C16B1FE2A82D00BAE5C0 /* PartnerPresentation.swift */; };
+		8AB3C16F1FE2B81900BAE5C0 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3C16E1FE2B81900BAE5C0 /* NetworkService.swift */; };
+		8AB3C1731FE2BEEF00BAE5C0 /* NetworkServiceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3C1721FE2BEEF00BAE5C0 /* NetworkServiceConfig.swift */; };
+		8AB3C1761FE2CB3000BAE5C0 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3C1751FE2CB3000BAE5C0 /* RoundButton.swift */; };
+		8AB3C17C1FE2CD2800BAE5C0 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8AB3C17B1FE2CD2800BAE5C0 /* .gitignore */; };
+		8AB3C1801FE2D5DE00BAE5C0 /* LocationServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3C17F1FE2D5DE00BAE5C0 /* LocationServiceImpl.swift */; };
+		8AB3C19E1FE2E27700BAE5C0 /* Point+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3C19A1FE2E27700BAE5C0 /* Point+CoreDataClass.swift */; };
+		8AB3C19F1FE2E27700BAE5C0 /* Point+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3C19B1FE2E27700BAE5C0 /* Point+CoreDataProperties.swift */; };
+		8AB3C1A01FE2E27700BAE5C0 /* Partner+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3C19C1FE2E27700BAE5C0 /* Partner+CoreDataClass.swift */; };
+		8AB3C1A11FE2E27700BAE5C0 /* Partner+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3C19D1FE2E27700BAE5C0 /* Partner+CoreDataProperties.swift */; };
+		8AF1CC731FE50A9D00D67198 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF1CC721FE50A9D00D67198 /* GoogleMaps.framework */; };
+		8AF1CC771FE50F9A00D67198 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF1CC761FE50F9A00D67198 /* InfoView.swift */; };
+		8AF1CC791FE50FA500D67198 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AF1CC781FE50FA500D67198 /* InfoView.xib */; };
+		8AF1CC7B1FE50FCC00D67198 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF1CC7A1FE50FCC00D67198 /* BaseView.swift */; };
+		8AF791B71FE2FDBE0074290C /* PartnerToPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF791B61FE2FDBE0074290C /* PartnerToPresentation.swift */; };
+		8AF791BA1FE3013C0074290C /* TinkoffError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF791B91FE3013C0074290C /* TinkoffError.swift */; };
+		8AF791C11FE44D160074290C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF791C01FE44D160074290C /* CoreDataStack.swift */; };
+		8AF791C31FE48E9C0074290C /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF791C21FE48E9C0074290C /* LocationService.swift */; };
+		8AF791C71FE4A6560074290C /* PointMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF791C61FE4A6560074290C /* PointMapper.swift */; };
+		96E4DE68229A4023A0ED411B /* Pods_TinkoffApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4CB07CB6BD417763202B519 /* Pods_TinkoffApp.framework */; };
+		A525639C296DA588F03B6518 /* PointsPresenterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C111F75BCCF06C9E966D4040 /* PointsPresenterInput.swift */; };
+		ADA32598C28D195AE19980FB /* Pods_TinkoffAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137F32059BD285519DFB84B8 /* Pods_TinkoffAppTests.framework */; };
+		CC2FB96FFCF05FB5D835DE4C /* BalanceIncreaseRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E44668D5276D1CA0A6B474 /* BalanceIncreaseRouterTests.swift */; };
+		D7A0DDF34457D3440FDDCF0B /* PointsIncreaseInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69DA28DD4F99CBDF67D8DA9 /* PointsIncreaseInitializer.swift */; };
+		F162F60CF3C6BBAC629710E8 /* PointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAAABABD049FDD1D8152D86 /* PointsViewController.swift */; };
+		F3A1F62266826DEA619BEF1E /* Pods_TinkoffAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DC4E3A439A6663DD8D310F /* Pods_TinkoffAppUITests.framework */; };
+		FBE6C6F044F5758D679AD591 /* PointsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360508DACC6DF0CF7417B644 /* PointsPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +80,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		137F32059BD285519DFB84B8 /* Pods_TinkoffAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinkoffAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C6F39F2FBC467EBF2D4DE8A /* Pods-TinkoffAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinkoffAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinkoffAppUITests/Pods-TinkoffAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1EC5DAE20221A63366236DD3 /* BalanceIncreasePresenterTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BalanceIncreasePresenterTests.swift; sourceTree = "<group>"; };
+		360508DACC6DF0CF7417B644 /* PointsPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PointsPresenter.swift; sourceTree = "<group>"; };
+		3EAAABABD049FDD1D8152D86 /* PointsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PointsViewController.swift; sourceTree = "<group>"; };
+		400E58D0A15A6BFC9C527D76 /* Pods-TinkoffAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinkoffAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinkoffAppUITests/Pods-TinkoffAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		498852AC7E1C49EF43E38897 /* Pods-TinkoffApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinkoffApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinkoffApp/Pods-TinkoffApp.debug.xcconfig"; sourceTree = "<group>"; };
+		68AAC2C9084C04884C0C4DB9 /* BalanceIncreaseViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BalanceIncreaseViewOutput.swift; sourceTree = "<group>"; };
+		7214C7D73A289CB5EABC3820 /* PointsInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PointsInteractorOutput.swift; sourceTree = "<group>"; };
+		7C42EB5850FABEBF234A4772 /* PointsConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PointsConfigurator.swift; sourceTree = "<group>"; };
+		88B258B81663CB3A576037BF /* BalanceIncreaseConfiguratorTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BalanceIncreaseConfiguratorTests.swift; sourceTree = "<group>"; };
 		8A30438A1FE1D2C500718AB1 /* TinkoffApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinkoffApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A30438D1FE1D2C500718AB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8A30438F1FE1D2C500718AB1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8A3043921FE1D2C500718AB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A3043951FE1D2C500718AB1 /* TinkoffApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TinkoffApp.xcdatamodel; sourceTree = "<group>"; };
 		8A3043971FE1D2C500718AB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +104,48 @@
 		8A3043AC1FE1D2C600718AB1 /* TinkoffAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinkoffAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A3043B01FE1D2C600718AB1 /* TinkoffAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffAppUITests.swift; sourceTree = "<group>"; };
 		8A3043B21FE1D2C600718AB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8AA0775D1FE5A98900F94432 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		8AA077601FE6701700F94432 /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
+		8AA077621FE6702100F94432 /* LabelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelView.xib; sourceTree = "<group>"; };
+		8AA077641FE68D6A00F94432 /* PointsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsInteractor.swift; sourceTree = "<group>"; };
+		8AA077691FE68E0900F94432 /* PointsInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsInteractorInput.swift; sourceTree = "<group>"; };
+		8AB3C1551FE27DF000BAE5C0 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		8AB3C1571FE27E0000BAE5C0 /* ImageDownloaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderService.swift; sourceTree = "<group>"; };
+		8AB3C15E1FE2892700BAE5C0 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
+		8AB3C1601FE28A2100BAE5C0 /* ImageDownloaderServiceConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderServiceConfig.swift; sourceTree = "<group>"; };
+		8AB3C1631FE28D4600BAE5C0 /* PointsPresenterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsPresenterOutput.swift; sourceTree = "<group>"; };
+		8AB3C1671FE2918D00BAE5C0 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		8AB3C1691FE2A80200BAE5C0 /* PointPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointPresentation.swift; sourceTree = "<group>"; };
+		8AB3C16B1FE2A82D00BAE5C0 /* PartnerPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerPresentation.swift; sourceTree = "<group>"; };
+		8AB3C16E1FE2B81900BAE5C0 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		8AB3C1721FE2BEEF00BAE5C0 /* NetworkServiceConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceConfig.swift; sourceTree = "<group>"; };
+		8AB3C1751FE2CB3000BAE5C0 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		8AB3C17B1FE2CD2800BAE5C0 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		8AB3C17F1FE2D5DE00BAE5C0 /* LocationServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceImpl.swift; sourceTree = "<group>"; };
+		8AB3C19A1FE2E27700BAE5C0 /* Point+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Point+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8AB3C19B1FE2E27700BAE5C0 /* Point+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Point+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8AB3C19C1FE2E27700BAE5C0 /* Partner+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Partner+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8AB3C19D1FE2E27700BAE5C0 /* Partner+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Partner+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8AF1CC701FE50A8A00D67198 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Pods/GoogleMaps/Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
+		8AF1CC721FE50A9D00D67198 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Pods/GoogleMaps/Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		8AF1CC761FE50F9A00D67198 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		8AF1CC781FE50FA500D67198 /* InfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
+		8AF1CC7A1FE50FCC00D67198 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		8AF791B61FE2FDBE0074290C /* PartnerToPresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartnerToPresentation.swift; sourceTree = "<group>"; };
+		8AF791B91FE3013C0074290C /* TinkoffError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffError.swift; sourceTree = "<group>"; };
+		8AF791C01FE44D160074290C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		8AF791C21FE48E9C0074290C /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		8AF791C61FE4A6560074290C /* PointMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointMapper.swift; sourceTree = "<group>"; };
+		92DF47F2AEEFD579772D25EB /* Pods-TinkoffAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinkoffAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TinkoffAppTests/Pods-TinkoffAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		96DC4E3A439A6663DD8D310F /* Pods_TinkoffAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinkoffAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4CB07CB6BD417763202B519 /* Pods_TinkoffApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinkoffApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B757463DB71B4AD03D52FC61 /* BalanceIncreaseViewTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BalanceIncreaseViewTests.swift; sourceTree = "<group>"; };
+		C111F75BCCF06C9E966D4040 /* PointsPresenterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PointsPresenterInput.swift; sourceTree = "<group>"; };
+		C69DA28DD4F99CBDF67D8DA9 /* PointsIncreaseInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PointsIncreaseInitializer.swift; sourceTree = "<group>"; };
+		CF599A5ADC0B6685B6E11B42 /* Pods-TinkoffApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinkoffApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinkoffApp/Pods-TinkoffApp.release.xcconfig"; sourceTree = "<group>"; };
+		D4E44668D5276D1CA0A6B474 /* BalanceIncreaseRouterTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BalanceIncreaseRouterTests.swift; sourceTree = "<group>"; };
+		E4D6B21320223DBE16265378 /* BalanceIncreaseInteractorTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BalanceIncreaseInteractorTests.swift; sourceTree = "<group>"; };
+		F91F54610DBAF8DC1CE937F5 /* Pods-TinkoffAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinkoffAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TinkoffAppTests/Pods-TinkoffAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +153,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AF1CC731FE50A9D00D67198 /* GoogleMaps.framework in Frameworks */,
+				96E4DE68229A4023A0ED411B /* Pods_TinkoffApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADA32598C28D195AE19980FB /* Pods_TinkoffAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,19 +170,87 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3A1F62266826DEA619BEF1E /* Pods_TinkoffAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1333D69852775C80CF8C5EFF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B757463DB71B4AD03D52FC61 /* BalanceIncreaseViewTests.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1698739DB82CDAE2318CAD3B /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D2601C399C351F438EEE8B2A /* BalanceIncrease */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		21784669DC654BDD0E18F320 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				498852AC7E1C49EF43E38897 /* Pods-TinkoffApp.debug.xcconfig */,
+				CF599A5ADC0B6685B6E11B42 /* Pods-TinkoffApp.release.xcconfig */,
+				92DF47F2AEEFD579772D25EB /* Pods-TinkoffAppTests.debug.xcconfig */,
+				F91F54610DBAF8DC1CE937F5 /* Pods-TinkoffAppTests.release.xcconfig */,
+				1C6F39F2FBC467EBF2D4DE8A /* Pods-TinkoffAppUITests.debug.xcconfig */,
+				400E58D0A15A6BFC9C527D76 /* Pods-TinkoffAppUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		29DEEE47498179F365429ACE /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D4E44668D5276D1CA0A6B474 /* BalanceIncreaseRouterTests.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		7AE89467EC7F051C148984B0 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				88B258B81663CB3A576037BF /* BalanceIncreaseConfiguratorTests.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		8207BEFA7E044A22CA5E4801 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E4D6B21320223DBE16265378 /* BalanceIncreaseInteractorTests.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		832E3EA337CA07D26281C85F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8AB3C1621FE28D2800BAE5C0 /* Output */,
+				8AB3C14E1FE27CCD00BAE5C0 /* Input */,
+				360508DACC6DF0CF7417B644 /* PointsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		8A3043811FE1D2C500718AB1 = {
 			isa = PBXGroup;
 			children = (
+				8AB3C17B1FE2CD2800BAE5C0 /* .gitignore */,
+				8AB3C1671FE2918D00BAE5C0 /* .swiftlint.yml */,
 				8A30438C1FE1D2C500718AB1 /* TinkoffApp */,
 				8A3043A41FE1D2C600718AB1 /* TinkoffAppTests */,
 				8A3043AF1FE1D2C600718AB1 /* TinkoffAppUITests */,
 				8A30438B1FE1D2C500718AB1 /* Products */,
+				21784669DC654BDD0E18F320 /* Pods */,
+				E229CA6C986CC28BBF22AABA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,11 +267,15 @@
 		8A30438C1FE1D2C500718AB1 /* TinkoffApp */ = {
 			isa = PBXGroup;
 			children = (
+				8AB3C17D1FE2CDA200BAE5C0 /* Storyboards */,
+				8AB3C1741FE2CB0F00BAE5C0 /* CustomViews */,
+				8AB3C15D1FE2891000BAE5C0 /* Constants */,
+				8AB3C15B1FE288D200BAE5C0 /* Utils */,
+				8AB3C1591FE27E0D00BAE5C0 /* Models */,
+				8AB3C1521FE27DC900BAE5C0 /* Services */,
+				D1B2103830439BA32A424C68 /* Modules */,
 				8A30438D1FE1D2C500718AB1 /* AppDelegate.swift */,
-				8A30438F1FE1D2C500718AB1 /* ViewController.swift */,
-				8A3043911FE1D2C500718AB1 /* Main.storyboard */,
 				8A3043971FE1D2C500718AB1 /* Assets.xcassets */,
-				8A3043991FE1D2C500718AB1 /* LaunchScreen.storyboard */,
 				8A30439C1FE1D2C500718AB1 /* Info.plist */,
 				8A3043941FE1D2C500718AB1 /* TinkoffApp.xcdatamodeld */,
 			);
@@ -113,6 +285,7 @@
 		8A3043A41FE1D2C600718AB1 /* TinkoffAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				1698739DB82CDAE2318CAD3B /* Tests */,
 				8A3043A51FE1D2C600718AB1 /* TinkoffAppTests.swift */,
 				8A3043A71FE1D2C600718AB1 /* Info.plist */,
 			);
@@ -128,6 +301,308 @@
 			path = TinkoffAppUITests;
 			sourceTree = "<group>";
 		};
+		8AA0775F1FE6700900F94432 /* LabelView */ = {
+			isa = PBXGroup;
+			children = (
+				8AA077601FE6701700F94432 /* LabelView.swift */,
+				8AA077621FE6702100F94432 /* LabelView.xib */,
+			);
+			path = LabelView;
+			sourceTree = "<group>";
+		};
+		8AB3C14D1FE27CC500BAE5C0 /* Output */ = {
+			isa = PBXGroup;
+			children = (
+				68AAC2C9084C04884C0C4DB9 /* BalanceIncreaseViewOutput.swift */,
+			);
+			path = Output;
+			sourceTree = "<group>";
+		};
+		8AB3C14E1FE27CCD00BAE5C0 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				C111F75BCCF06C9E966D4040 /* PointsPresenterInput.swift */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		8AB3C14F1FE27CDE00BAE5C0 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				8AA077691FE68E0900F94432 /* PointsInteractorInput.swift */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		8AB3C1501FE27CE300BAE5C0 /* Output */ = {
+			isa = PBXGroup;
+			children = (
+				7214C7D73A289CB5EABC3820 /* PointsInteractorOutput.swift */,
+			);
+			path = Output;
+			sourceTree = "<group>";
+		};
+		8AB3C1521FE27DC900BAE5C0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8AB3C17E1FE2D5CF00BAE5C0 /* Location */,
+				8AB3C16D1FE2B76E00BAE5C0 /* Network */,
+				8AB3C1541FE27DD600BAE5C0 /* CoreData */,
+				8AB3C1531FE27DCE00BAE5C0 /* ImageDownloader */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8AB3C1531FE27DCE00BAE5C0 /* ImageDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				8AB3C1571FE27E0000BAE5C0 /* ImageDownloaderService.swift */,
+			);
+			path = ImageDownloader;
+			sourceTree = "<group>";
+		};
+		8AB3C1541FE27DD600BAE5C0 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				8AF791BF1FE44D040074290C /* Stack */,
+				8AB3C1551FE27DF000BAE5C0 /* CoreDataService.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		8AB3C1591FE27E0D00BAE5C0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8AF791B81FE3012B0074290C /* Errors */,
+				8AF791B11FE2FA420074290C /* Mappers */,
+				8AB3C1991FE2E1BE00BAE5C0 /* Entities */,
+				8AB3C15A1FE27E1200BAE5C0 /* Presentation */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8AB3C15A1FE27E1200BAE5C0 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				8AB3C1691FE2A80200BAE5C0 /* PointPresentation.swift */,
+				8AB3C16B1FE2A82D00BAE5C0 /* PartnerPresentation.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		8AB3C15B1FE288D200BAE5C0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8AB3C15C1FE288D900BAE5C0 /* Logger */,
+				8AA0775D1FE5A98900F94432 /* Reachability.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8AB3C15C1FE288D900BAE5C0 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		8AB3C15D1FE2891000BAE5C0 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				8AB3C15E1FE2892700BAE5C0 /* AppConstant.swift */,
+				8AB3C1601FE28A2100BAE5C0 /* ImageDownloaderServiceConfig.swift */,
+				8AB3C1721FE2BEEF00BAE5C0 /* NetworkServiceConfig.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		8AB3C1621FE28D2800BAE5C0 /* Output */ = {
+			isa = PBXGroup;
+			children = (
+				8AB3C1631FE28D4600BAE5C0 /* PointsPresenterOutput.swift */,
+			);
+			path = Output;
+			sourceTree = "<group>";
+		};
+		8AB3C16D1FE2B76E00BAE5C0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8AB3C16E1FE2B81900BAE5C0 /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8AB3C1741FE2CB0F00BAE5C0 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				8AA0775F1FE6700900F94432 /* LabelView */,
+				8AF1CC751FE50F8700D67198 /* BaseView */,
+				8AF1CC741FE50F7E00D67198 /* InfoView */,
+				8AB3C1771FE2CB5500BAE5C0 /* RoundButton */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		8AB3C1771FE2CB5500BAE5C0 /* RoundButton */ = {
+			isa = PBXGroup;
+			children = (
+				8AB3C1751FE2CB3000BAE5C0 /* RoundButton.swift */,
+			);
+			path = RoundButton;
+			sourceTree = "<group>";
+		};
+		8AB3C17D1FE2CDA200BAE5C0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8A3043911FE1D2C500718AB1 /* Main.storyboard */,
+				8A3043991FE1D2C500718AB1 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		8AB3C17E1FE2D5CF00BAE5C0 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				8AB3C17F1FE2D5DE00BAE5C0 /* LocationServiceImpl.swift */,
+				8AF791C21FE48E9C0074290C /* LocationService.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		8AB3C1991FE2E1BE00BAE5C0 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				8AB3C19A1FE2E27700BAE5C0 /* Point+CoreDataClass.swift */,
+				8AB3C19B1FE2E27700BAE5C0 /* Point+CoreDataProperties.swift */,
+				8AB3C19C1FE2E27700BAE5C0 /* Partner+CoreDataClass.swift */,
+				8AB3C19D1FE2E27700BAE5C0 /* Partner+CoreDataProperties.swift */,
+			);
+			name = Entities;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		8AF1CC741FE50F7E00D67198 /* InfoView */ = {
+			isa = PBXGroup;
+			children = (
+				8AF1CC761FE50F9A00D67198 /* InfoView.swift */,
+				8AF1CC781FE50FA500D67198 /* InfoView.xib */,
+			);
+			path = InfoView;
+			sourceTree = "<group>";
+		};
+		8AF1CC751FE50F8700D67198 /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				8AF1CC7A1FE50FCC00D67198 /* BaseView.swift */,
+			);
+			path = BaseView;
+			sourceTree = "<group>";
+		};
+		8AF791B11FE2FA420074290C /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				8AF791C61FE4A6560074290C /* PointMapper.swift */,
+				8AF791B61FE2FDBE0074290C /* PartnerToPresentation.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		8AF791B81FE3012B0074290C /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				8AF791B91FE3013C0074290C /* TinkoffError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		8AF791BF1FE44D040074290C /* Stack */ = {
+			isa = PBXGroup;
+			children = (
+				8AF791C01FE44D160074290C /* CoreDataStack.swift */,
+			);
+			path = Stack;
+			sourceTree = "<group>";
+		};
+		ABC60C3F0A7FDAE907F41FDB /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				8AB3C1501FE27CE300BAE5C0 /* Output */,
+				8AB3C14F1FE27CDE00BAE5C0 /* Input */,
+				8AA077641FE68D6A00F94432 /* PointsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		C04B1AFB158A156CD39A3646 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8AB3C14D1FE27CC500BAE5C0 /* Output */,
+				3EAAABABD049FDD1D8152D86 /* PointsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C3359D81388BAB6E3FFE198A /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				7C42EB5850FABEBF234A4772 /* PointsConfigurator.swift */,
+				C69DA28DD4F99CBDF67D8DA9 /* PointsIncreaseInitializer.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		C3AD2CEB19B45EA265E96AE4 /* Points */ = {
+			isa = PBXGroup;
+			children = (
+				C04B1AFB158A156CD39A3646 /* View */,
+				832E3EA337CA07D26281C85F /* Presenter */,
+				ABC60C3F0A7FDAE907F41FDB /* Interactor */,
+				C3359D81388BAB6E3FFE198A /* Configurator */,
+			);
+			path = Points;
+			sourceTree = "<group>";
+		};
+		CC4C48FB292D44A66B1AE2AB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1EC5DAE20221A63366236DD3 /* BalanceIncreasePresenterTests.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D1B2103830439BA32A424C68 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				C3AD2CEB19B45EA265E96AE4 /* Points */,
+			);
+			name = Modules;
+			path = ../Modules;
+			sourceTree = "<group>";
+		};
+		D2601C399C351F438EEE8B2A /* BalanceIncrease */ = {
+			isa = PBXGroup;
+			children = (
+				7AE89467EC7F051C148984B0 /* Configurator */,
+				1333D69852775C80CF8C5EFF /* View */,
+				8207BEFA7E044A22CA5E4801 /* Interactor */,
+				CC4C48FB292D44A66B1AE2AB /* Presenter */,
+				29DEEE47498179F365429ACE /* Router */,
+			);
+			path = BalanceIncrease;
+			sourceTree = "<group>";
+		};
+		E229CA6C986CC28BBF22AABA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8AF1CC721FE50A9D00D67198 /* GoogleMaps.framework */,
+				8AF1CC701FE50A8A00D67198 /* GoogleMapsBase.framework */,
+				A4CB07CB6BD417763202B519 /* Pods_TinkoffApp.framework */,
+				137F32059BD285519DFB84B8 /* Pods_TinkoffAppTests.framework */,
+				96DC4E3A439A6663DD8D310F /* Pods_TinkoffAppUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +610,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8A3043B51FE1D2C600718AB1 /* Build configuration list for PBXNativeTarget "TinkoffApp" */;
 			buildPhases = (
+				72B1E4E5A9EF0A41FBA1B71A /* [CP] Check Pods Manifest.lock */,
 				8A3043861FE1D2C500718AB1 /* Sources */,
 				8A3043871FE1D2C500718AB1 /* Frameworks */,
 				8A3043881FE1D2C500718AB1 /* Resources */,
+				0CF30AE3519C5D2CDBD89582 /* [CP] Embed Pods Frameworks */,
+				CBBF990E82D8F92E03F2E4A2 /* [CP] Copy Pods Resources */,
+				8AB3C14B1FE1DB2200BAE5C0 /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -152,9 +631,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8A3043B81FE1D2C600718AB1 /* Build configuration list for PBXNativeTarget "TinkoffAppTests" */;
 			buildPhases = (
+				9B8D2D15D5479D988ED749C1 /* [CP] Check Pods Manifest.lock */,
 				8A30439D1FE1D2C600718AB1 /* Sources */,
 				8A30439E1FE1D2C600718AB1 /* Frameworks */,
 				8A30439F1FE1D2C600718AB1 /* Resources */,
+				A8C28DB8247FD2AA94673CB4 /* [CP] Embed Pods Frameworks */,
+				675E9C14FAE492FA1C042E11 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +652,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8A3043BB1FE1D2C600718AB1 /* Build configuration list for PBXNativeTarget "TinkoffAppUITests" */;
 			buildPhases = (
+				FB1DDBBF6450DC440A886CBB /* [CP] Check Pods Manifest.lock */,
 				8A3043A81FE1D2C600718AB1 /* Sources */,
 				8A3043A91FE1D2C600718AB1 /* Frameworks */,
 				8A3043AA1FE1D2C600718AB1 /* Resources */,
+				79B8D9E3184F301D702C6CB6 /* [CP] Embed Pods Frameworks */,
+				46ABED1B03B807ACC36F3060 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,9 +720,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AF1CC791FE50FA500D67198 /* InfoView.xib in Resources */,
+				8AB3C17C1FE2CD2800BAE5C0 /* .gitignore in Resources */,
+				8AB3C1681FE2918D00BAE5C0 /* .swiftlint.yml in Resources */,
 				8A30439B1FE1D2C500718AB1 /* LaunchScreen.storyboard in Resources */,
 				8A3043981FE1D2C500718AB1 /* Assets.xcassets in Resources */,
 				8A3043931FE1D2C500718AB1 /* Main.storyboard in Resources */,
+				8AA077631FE6702100F94432 /* LabelView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,14 +746,211 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0CF30AE3519C5D2CDBD89582 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TinkoffApp/Pods-TinkoffApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46ABED1B03B807ACC36F3060 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TinkoffAppUITests/Pods-TinkoffAppUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		675E9C14FAE492FA1C042E11 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TinkoffAppTests/Pods-TinkoffAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72B1E4E5A9EF0A41FBA1B71A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TinkoffApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		79B8D9E3184F301D702C6CB6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TinkoffAppUITests/Pods-TinkoffAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AB3C14B1FE1DB2200BAE5C0 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\nexit 1\nfi";
+		};
+		9B8D2D15D5479D988ED749C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TinkoffAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8C28DB8247FD2AA94673CB4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TinkoffAppTests/Pods-TinkoffAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBBF990E82D8F92E03F2E4A2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TinkoffApp/Pods-TinkoffApp-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TinkoffApp/Pods-TinkoffApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB1DDBBF6450DC440A886CBB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TinkoffAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8A3043861FE1D2C500718AB1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8A3043961FE1D2C500718AB1 /* TinkoffApp.xcdatamodeld in Sources */,
-				8A3043901FE1D2C500718AB1 /* ViewController.swift in Sources */,
 				8A30438E1FE1D2C500718AB1 /* AppDelegate.swift in Sources */,
+				8AB3C1641FE28D4600BAE5C0 /* PointsPresenterOutput.swift in Sources */,
+				3A6B2CF0EB5BCB4D3CEBB3B4 /* BalanceIncreaseViewOutput.swift in Sources */,
+				F162F60CF3C6BBAC629710E8 /* PointsViewController.swift in Sources */,
+				8AA077651FE68D6A00F94432 /* PointsInteractor.swift in Sources */,
+				A525639C296DA588F03B6518 /* PointsPresenterInput.swift in Sources */,
+				8AB3C19F1FE2E27700BAE5C0 /* Point+CoreDataProperties.swift in Sources */,
+				8AF791BA1FE3013C0074290C /* TinkoffError.swift in Sources */,
+				8AB3C1581FE27E0000BAE5C0 /* ImageDownloaderService.swift in Sources */,
+				8AA077611FE6701700F94432 /* LabelView.swift in Sources */,
+				8AF1CC7B1FE50FCC00D67198 /* BaseView.swift in Sources */,
+				FBE6C6F044F5758D679AD591 /* PointsPresenter.swift in Sources */,
+				8AB3C1731FE2BEEF00BAE5C0 /* NetworkServiceConfig.swift in Sources */,
+				83C7B8A2F5075904B3A4B3EB /* PointsInteractorOutput.swift in Sources */,
+				8AB3C1611FE28A2100BAE5C0 /* ImageDownloaderServiceConfig.swift in Sources */,
+				8AF791C11FE44D160074290C /* CoreDataStack.swift in Sources */,
+				8AF1CC771FE50F9A00D67198 /* InfoView.swift in Sources */,
+				8AB3C19E1FE2E27700BAE5C0 /* Point+CoreDataClass.swift in Sources */,
+				8AA0776A1FE68E0900F94432 /* PointsInteractorInput.swift in Sources */,
+				8AB3C1A11FE2E27700BAE5C0 /* Partner+CoreDataProperties.swift in Sources */,
+				8AF791B71FE2FDBE0074290C /* PartnerToPresentation.swift in Sources */,
+				8AF791C31FE48E9C0074290C /* LocationService.swift in Sources */,
+				367C54BC261A4C36E72D8CD3 /* PointsConfigurator.swift in Sources */,
+				D7A0DDF34457D3440FDDCF0B /* PointsIncreaseInitializer.swift in Sources */,
+				8AF791C71FE4A6560074290C /* PointMapper.swift in Sources */,
+				8AB3C1801FE2D5DE00BAE5C0 /* LocationServiceImpl.swift in Sources */,
+				8AB3C16C1FE2A82D00BAE5C0 /* PartnerPresentation.swift in Sources */,
+				8AA0775E1FE5A98900F94432 /* Reachability.swift in Sources */,
+				8AB3C1761FE2CB3000BAE5C0 /* RoundButton.swift in Sources */,
+				8AB3C1561FE27DF000BAE5C0 /* CoreDataService.swift in Sources */,
+				8AB3C16F1FE2B81900BAE5C0 /* NetworkService.swift in Sources */,
+				8AB3C15F1FE2892700BAE5C0 /* AppConstant.swift in Sources */,
+				8AB3C1A01FE2E27700BAE5C0 /* Partner+CoreDataClass.swift in Sources */,
+				8AB3C16A1FE2A80200BAE5C0 /* PointPresentation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +959,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A3043A61FE1D2C600718AB1 /* TinkoffAppTests.swift in Sources */,
+				67DED2D369AFE54E8CD8EF61 /* BalanceIncreaseConfiguratorTests.swift in Sources */,
+				26E180BF2CE45144CDFB8C44 /* BalanceIncreaseViewTests.swift in Sources */,
+				85A137B230909E3E82BC466F /* BalanceIncreaseInteractorTests.swift in Sources */,
+				0EBD08B2EBCB038EC11D3169 /* BalanceIncreasePresenterTests.swift in Sources */,
+				CC2FB96FFCF05FB5D835DE4C /* BalanceIncreaseRouterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,10 +1119,16 @@
 		};
 		8A3043B61FE1D2C600718AB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 498852AC7E1C49EF43E38897 /* Pods-TinkoffApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 52GNMSFB79;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/GoogleMaps/Base/Frameworks",
+					"$(PROJECT_DIR)/Pods/GoogleMaps/Maps/Frameworks",
+				);
 				INFOPLIST_FILE = TinkoffApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AlexeyMukhin.TinkoffApp;
@@ -443,10 +1140,16 @@
 		};
 		8A3043B71FE1D2C600718AB1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF599A5ADC0B6685B6E11B42 /* Pods-TinkoffApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 52GNMSFB79;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/GoogleMaps/Base/Frameworks",
+					"$(PROJECT_DIR)/Pods/GoogleMaps/Maps/Frameworks",
+				);
 				INFOPLIST_FILE = TinkoffApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AlexeyMukhin.TinkoffApp;
@@ -458,6 +1161,7 @@
 		};
 		8A3043B91FE1D2C600718AB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92DF47F2AEEFD579772D25EB /* Pods-TinkoffAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -475,6 +1179,7 @@
 		};
 		8A3043BA1FE1D2C600718AB1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F91F54610DBAF8DC1CE937F5 /* Pods-TinkoffAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -492,6 +1197,7 @@
 		};
 		8A3043BC1FE1D2C600718AB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C6F39F2FBC467EBF2D4DE8A /* Pods-TinkoffAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -508,6 +1214,7 @@
 		};
 		8A3043BD1FE1D2C600718AB1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 400E58D0A15A6BFC9C527D76 /* Pods-TinkoffAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

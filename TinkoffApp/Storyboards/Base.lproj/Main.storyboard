@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xhB-ad-qlB">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Balanceincrease View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="PointsViewController" customModule="TinkoffApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egs-Ok-cAr" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9wB-ah-C22" customClass="InfoView" customModule="TinkoffApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="467" width="375" height="200"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qGe-c4-imm" customClass="LabelView" customModule="TinkoffApp" customModuleProvider="target">
+                                <rect key="frame" x="8" y="28" width="96" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="8Or-We-FmG"/>
+                                    <constraint firstAttribute="width" secondItem="qGe-c4-imm" secondAttribute="height" multiplier="3:1" id="rjh-vt-AxR"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Вы онлайн"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWm-wG-HRx">
+                                <rect key="frame" x="311.5" y="36" width="47.5" height="103.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7M8-PH-2kj">
+                                        <rect key="frame" x="0.0" y="0.0" width="48.5" height="104"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qs5-kT-Pcr" customClass="RoundButton" customModule="TinkoffApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="48.5" height="48"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                <state key="normal" title="+">
+                                                    <color key="titleColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                        <color key="value" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="didPressZoomInButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xLP-tR-1XS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWa-ed-0fL" customClass="RoundButton" customModule="TinkoffApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="56" width="48.5" height="48"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="KWa-ed-0fL" secondAttribute="height" id="zNI-0c-f1f"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                <state key="normal" title="-">
+                                                    <color key="titleColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                        <color key="value" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="didPressZoomOutButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qwf-1I-vzB"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="7M8-PH-2kj" firstAttribute="top" secondItem="fWm-wG-HRx" secondAttribute="top" id="0WX-mb-6PJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="7M8-PH-2kj" secondAttribute="bottom" constant="-0.5" id="Vhp-He-3LL"/>
+                                    <constraint firstItem="7M8-PH-2kj" firstAttribute="leading" secondItem="fWm-wG-HRx" secondAttribute="leading" id="amX-Dm-JcY"/>
+                                    <constraint firstAttribute="trailing" secondItem="7M8-PH-2kj" secondAttribute="trailing" constant="-0.5" id="lpm-Ay-X2i"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jjL-eJ-zDx" customClass="LabelView" customModule="TinkoffApp" customModuleProvider="target">
+                                <rect key="frame" x="139.5" y="28" width="96" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="ctY-zg-ewG"/>
+                                    <constraint firstAttribute="width" secondItem="jjL-eJ-zDx" secondAttribute="height" multiplier="3:1" id="yOt-Zl-g8z"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Загрузка"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9wB-ah-C22" secondAttribute="trailing" id="8ql-Bn-aDQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="egs-Ok-cAr" secondAttribute="trailing" id="92P-yt-1gC"/>
+                            <constraint firstItem="qGe-c4-imm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="95Z-gs-R4u"/>
+                            <constraint firstItem="egs-Ok-cAr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9ur-e2-kgc"/>
+                            <constraint firstItem="9wB-ah-C22" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="FXU-Gb-8EN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9wB-ah-C22" secondAttribute="bottom" id="Hwu-Fm-CcQ"/>
+                            <constraint firstItem="fWm-wG-HRx" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="Ioi-5k-ElB"/>
+                            <constraint firstItem="9wB-ah-C22" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OyG-Jh-68Y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fWm-wG-HRx" secondAttribute="trailing" constant="16" id="gFz-od-3Qm"/>
+                            <constraint firstItem="fWm-wG-HRx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="js4-uu-rJX"/>
+                            <constraint firstItem="jjL-eJ-zDx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="nfQ-49-9M6"/>
+                            <constraint firstItem="egs-Ok-cAr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oJB-j1-Y9s"/>
+                            <constraint firstItem="jjL-eJ-zDx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="sBj-2b-oCV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="egs-Ok-cAr" secondAttribute="bottom" id="w7x-bV-v92"/>
+                            <constraint firstItem="qGe-c4-imm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="xPS-ij-KE0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Ioi-5k-ElB"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="Ioi-5k-ElB"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="dP7-xf-evR"/>
+                    <connections>
+                        <outlet property="infoView" destination="9wB-ah-C22" id="mQn-3c-aGW"/>
+                        <outlet property="infoViewBottomConstraint" destination="Hwu-Fm-CcQ" id="4bR-dx-ejj"/>
+                        <outlet property="mapView" destination="egs-Ok-cAr" id="xGn-sR-u6R"/>
+                        <outlet property="networkStatusLabel" destination="qGe-c4-imm" id="Gt3-Sd-kTL"/>
+                        <outlet property="networkStatusLabelLeftConstraint" destination="xPS-ij-KE0" id="R8e-GZ-ktd"/>
+                        <outlet property="statusLabel" destination="jjL-eJ-zDx" id="QMa-XH-bpt"/>
+                        <outlet property="statusLabelTopConstraint" destination="sBj-2b-oCV" id="SRt-da-2DF"/>
+                        <outlet property="zoomInZoomOutViewRightConstraint" destination="gFz-od-3Qm" id="QcI-pv-ayz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="lPj-Hv-Ru1" customClass="PointsModuleInitializer" customModule="TinkoffApp" customModuleProvider="target">
+                    <connections>
+                        <outlet property="balanceincreaseViewController" destination="BYZ-38-t0r" id="GDz-bj-030"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="277.60000000000002" y="33.733133433283363"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="A5b-9G-cTt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="xhB-ad-qlB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mfx-yg-6ub">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="os0-4i-yIt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ATd-0H-Y2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-598" y="34"/>
+        </scene>
+    </scenes>
+</document>

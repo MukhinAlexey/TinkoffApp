@@ -1,4 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17C88" minimumToolsVersion="Xcode 9.0" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Partner" representedClassName="Partner" syncable="YES">
+        <attribute name="depositionDuration" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hasLocations" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" attributeType="String" syncable="YES"/>
+        <attribute name="isMomentary" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="limitations" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="picture" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pointType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="partnerToBalanceIncreasePoint" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Point" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Point" representedClassName="Point" syncable="YES">
+        <attribute name="addressInfo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fullAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lat" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="lon" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="partnerName" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="searchDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="workHours" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="pointToPartner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Partner" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Partner" positionX="-324" positionY="-18" width="128" height="195"/>
+        <element name="Point" positionX="-117" positionY="-18" width="128" height="180"/>
+    </elements>
 </model>

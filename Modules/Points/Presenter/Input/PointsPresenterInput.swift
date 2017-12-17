@@ -1,0 +1,3 @@
+protocol PointsPresenterInput: BalanceIncreaseViewOutput, PointsInteractorOutput {
+
+}
