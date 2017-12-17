@@ -6,13 +6,14 @@ class PointsInteractor {
     var imageDownloaderService: ImageDownloaderService!
     var networkService: NetworkService!
     var locationService: LocationService!
+    var coreDataService: CoreDataService!
 
     private var isUserPostionSet = false
-    //private var searchRadius: CLLocationDistance!
-    private var visitedCoordinates = [CLLocationCoordinate2D]()
     private var lastCoordinate: CLLocationCoordinate2D!
 
     let reachability = Reachability()!
+
+    var isFirstLaunch = true
 }
 
 extension PointsInteractor: PointsInteractorInput {
@@ -24,32 +25,51 @@ extension PointsInteractor: PointsInteractorInput {
 
     func getPartnersList() {
 
-        guard reachability.connection == .none else {
+        guard reachability.connection != .none else {
             return
         }
 
+        coreDataService.getPartners(completition: self.returnToView(_:error:))
+
         networkService.getPartnersList { partners, error in
+
             guard
                 error == nil,
                 let partners = partners else {
                     return
             }
 
-            CoreDataService.shared.save(partners)
+            self.coreDataService.savePartners(partners, completition: self.returnToView(_:error:))
 
-            CoreDataService.shared.getPartnersList { partners, error in
-                
-                /*
-                 var partnersPresentation = [PartnerPresentation]()
-                 partnersPresentation = PartnerToPresentation()
-                 .mapArrays(partners: partners,
-                 partnersPresentation: partnersPresentation)
+        }
+    }
 
-                 DispatchQueue.main.async {
-                 self.output.didGet(partnersPresentation)
-                 }
-                 */
-            }
+    private func returnToView(_ partners: [Partner]?, error: Error?) {
+        guard
+            error == nil,
+            let partners = partners else {
+                return
+        }
+        let partnersPresentationInit = [PartnerPresentation](repeating: PartnerPresentation(),
+                                                             count: partners.count)
+
+        let partnersPresentation = PartnerMapper().map(partners, to: partnersPresentationInit)
+        DispatchQueue.main.async {
+            self.output.didGet(partnersPresentation)
+        }
+    }
+
+    private func returnToView(_ points: [Point]?, error: Error?) {
+        guard
+            error == nil,
+            let points = points else {
+                return
+        }
+        let pointsPresentationInit = [PointPresentation](repeating: PointPresentation(),
+                                                         count: points.count)
+        let pointsPresentation = PointMapper().map(points, to: pointsPresentationInit)
+        DispatchQueue.main.async {
+            self.output.didGet(pointsPresentation)
         }
     }
 
@@ -67,28 +87,11 @@ extension PointsInteractor: PointsInteractorInput {
             }
         }
 
-        CoreDataService.shared
+        coreDataService
             .getPoints(for: coordinate,
                        topRightCoordinate: topRightCordinate,
-                       bottomLeftCoordinate: bottomLeftCordinate)
-            { points, error in
-
-                guard
-                    error == nil,
-                    let points = points else {
-                        return
-                }
-
-                let pointsPresentationInit =
-                    [PointPresentation](repeating: PointPresentation(),
-                                        count: points.count)
-
-                let pointsPresentation = PointMapper().mapArray(points, to: pointsPresentationInit)
-
-                DispatchQueue.main.async {
-                    self.output.didGet(pointsPresentation)
-                }
-        }
+                       bottomLeftCoordinate: bottomLeftCordinate,
+                       completition: returnToView(_:error:))
 
         if lastCoordinate == nil {
             lastCoordinate = coordinate
@@ -98,29 +101,26 @@ extension PointsInteractor: PointsInteractorInput {
                                       longitude: lastCoordinate.longitude)
         let locationTo = CLLocation(latitude: coordinate.latitude,
                                     longitude: coordinate.longitude)
-
         let coordinatEdgeLocation = CLLocation(latitude: topRightCordinate.latitude,
                                                longitude: topRightCordinate.longitude)
-
         let coordinatCenterLocation = CLLocation(latitude: coordinate.latitude,
                                                  longitude: coordinate.longitude)
 
         let searchRadius = coordinatEdgeLocation.distance(from: coordinatCenterLocation)
 
-        guard locationTo.distance(from: locationFrom) > searchRadius / 2.0 else {
-            return
+        guard
+            locationTo.distance(from: locationFrom) > searchRadius / 2.0 || isFirstLaunch else {
+                return
         }
 
+        isFirstLaunch = false
         lastCoordinate = coordinate
 
         guard reachability.connection != .none else {
             return
         }
-
-        networkService.getPoints(for: coordinate,
-                                 with: searchRadius)
-        {
-            pointsJSON, error in
+        
+        networkService.getPoints(for: coordinate, with: searchRadius) { pointsJSON, error in
 
             guard
                 error == nil,
@@ -128,22 +128,7 @@ extension PointsInteractor: PointsInteractorInput {
                     return
             }
 
-            CoreDataService.shared.savePoints(pointsJSON) { points, error in
-                guard
-                    error == nil,
-                    let points = points else {
-                        return
-                }
-
-                let pointsPresentationInit = [PointPresentation](repeating: PointPresentation(),
-                                                                 count: points.count)
-
-                let pointsPresentation = PointMapper().mapArray(points, to: pointsPresentationInit)
-
-                DispatchQueue.main.async {
-                    self.output.didGet(pointsPresentation)
-                }
-            }
+            self.coreDataService.savePoints(pointsJSON, completition: self.returnToView(_:error:))
         }
     }
 }

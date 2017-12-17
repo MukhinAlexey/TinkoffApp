@@ -10,7 +10,6 @@ protocol PointsInteractorOutput: class {
     func didUpdate(_ coordinates: CLLocationCoordinate2D)
 
     func didGet(_ points: [PointPresentation])
-
     func didGet(_ partners: [PartnerPresentation])
 
     func didGoOnline()

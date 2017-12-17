@@ -27,16 +27,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9wB-ah-C22" customClass="InfoView" customModule="TinkoffApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="467" width="375" height="200"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qGe-c4-imm" customClass="LabelView" customModule="TinkoffApp" customModuleProvider="target">
-                                <rect key="frame" x="8" y="28" width="96" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="8Or-We-FmG"/>
-                                    <constraint firstAttribute="width" secondItem="qGe-c4-imm" secondAttribute="height" multiplier="3:1" id="rjh-vt-AxR"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Вы онлайн"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWm-wG-HRx">
                                 <rect key="frame" x="311.5" y="36" width="47.5" height="103.5"/>
                                 <subviews>
@@ -86,6 +76,16 @@
                                     <constraint firstAttribute="trailing" secondItem="7M8-PH-2kj" secondAttribute="trailing" constant="-0.5" id="lpm-Ay-X2i"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qGe-c4-imm" customClass="LabelView" customModule="TinkoffApp" customModuleProvider="target">
+                                <rect key="frame" x="8" y="28" width="96" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="8Or-We-FmG"/>
+                                    <constraint firstAttribute="width" secondItem="qGe-c4-imm" secondAttribute="height" multiplier="3:1" id="rjh-vt-AxR"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Вы онлайн"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jjL-eJ-zDx" customClass="LabelView" customModule="TinkoffApp" customModuleProvider="target">
                                 <rect key="frame" x="139.5" y="28" width="96" height="32"/>
                                 <constraints>
@@ -129,7 +129,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="dP7-xf-evR"/>
                     <connections>
-                        <outlet property="infoView" destination="9wB-ah-C22" id="mQn-3c-aGW"/>
+                        <outlet property="infoView" destination="9wB-ah-C22" id="4an-LU-2Kh"/>
                         <outlet property="infoViewBottomConstraint" destination="Hwu-Fm-CcQ" id="4bR-dx-ejj"/>
                         <outlet property="mapView" destination="egs-Ok-cAr" id="xGn-sR-u6R"/>
                         <outlet property="networkStatusLabel" destination="qGe-c4-imm" id="Gt3-Sd-kTL"/>

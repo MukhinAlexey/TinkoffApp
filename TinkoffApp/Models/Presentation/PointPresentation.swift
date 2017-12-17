@@ -1,5 +1,6 @@
 import UIKit
 import CoreLocation
+import GoogleMaps
 
 class PointPresentation {
 
@@ -10,6 +11,7 @@ class PointPresentation {
     //var phone: String?
     //var workHours: String?
     //var balanceIncreasePointToPartner: Partner?
+    var marker: GMSMarker?
 
     init() {}
 

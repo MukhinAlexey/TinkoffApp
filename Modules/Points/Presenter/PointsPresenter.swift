@@ -26,7 +26,7 @@ extension PointsPresenter: PointsPresenterInput {
     }
 
     func didGet(_ partners: [PartnerPresentation]) {
-
+        view.didGet(partners)
     }
 
     func didLoad(_ image: Data,
@@ -40,6 +40,10 @@ extension PointsPresenter: PointsPresenterInput {
 
     func didUpdate(_ coordinates: CLLocationCoordinate2D) {
         view.didUpdate(coordinates)
+    }
+
+    func didTap(on point: PointPresentation) {
+        
     }
 
     func didGoOnline() {

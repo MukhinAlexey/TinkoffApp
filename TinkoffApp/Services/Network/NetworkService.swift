@@ -23,9 +23,6 @@ class NetworkService: NSObject {
 
         session.dataTask(with: request) { data, response, error in
 
-            print(data)
-            print(error)
-
             guard error == nil, let data = data else {
                 completition(nil, error)
                 return
@@ -35,24 +32,20 @@ class NetworkService: NSObject {
     }
 
     func getPartnersList(completition: @escaping ([[String:AnyObject]]?, Error?) -> Void) {
-        makeCall(withMethod: "POST", toUrl: partnersListURL, withParameters: "") { data, error in
+        makeCall(withMethod: "POST",
+                 toUrl: partnersListURL,
+                 withParameters: "")
+        { data, error in
+
             guard
                 error == nil,
                 let data = data else {
+                    completition(nil, TinkoffError.jsonSerializationError)
                     return
             }
 
-            let (JSONData, error) = self.JSONTransform(from: data)
-
-            guard
-                error == nil,
-                let JSONDataNotNil = JSONData,
-                let unwrapedJSONDataNotNil = JSONDataNotNil["payload"],
-                let unwrapedJSONDataNotNilArray = unwrapedJSONDataNotNil as? [[String:AnyObject]] else {
-                    return
-            }
-
-            completition(unwrapedJSONDataNotNilArray, nil)
+            let (unwrapedJSONData, error) = self.JSONTransform(from: data)
+            completition(unwrapedJSONData, error)
         }
     }
 
@@ -70,29 +63,31 @@ class NetworkService: NSObject {
             guard
                 error == nil,
                 let data = data else {
+                    completition(nil, TinkoffError.jsonSerializationError)
                     return
             }
 
-            let (JSONData, error) = self.JSONTransform(from: data)
+            let (unwrapedJSONData, error) = self.JSONTransform(from: data)
 
-            guard
-                error == nil,
-                let JSONDataNotNil = JSONData,
-                let unwrapedJSONDataNotNil = JSONDataNotNil["payload"],
-                let unwrapedJSONDataNotNilArray = unwrapedJSONDataNotNil as? [[String:AnyObject]] else {
-                    return
-            }
-            completition(unwrapedJSONDataNotNilArray, nil)
+            completition(unwrapedJSONData, error)
         }
     }
 
-    func JSONTransform(from data: Data) -> ([String: AnyObject]?, Error?) {
-        var json: [String: AnyObject]
+    func JSONTransform(from data: Data) -> ([[String: AnyObject]]?, Error?) {
+        var json: [String: AnyObject]?
         do {
-            json = (try JSONSerialization.jsonObject(with: data) as? [String: AnyObject])!
+            json = try JSONSerialization.jsonObject(with: data) as? [String: AnyObject]
         } catch {
             return (nil, error)
         }
-        return (json, nil)
+
+        guard
+            let JSONDataNotNil = json,
+            let unwrapedJSONDataNotNil = JSONDataNotNil["payload"],
+            let unwrapedJSONDataNotNilArray = unwrapedJSONDataNotNil as? [[String:AnyObject]] else {
+                return (nil, TinkoffError.jsonSerializationError)
+        }
+
+        return (unwrapedJSONDataNotNilArray, nil)
     }
 }

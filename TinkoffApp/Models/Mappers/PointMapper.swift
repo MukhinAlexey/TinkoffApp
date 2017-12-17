@@ -15,7 +15,7 @@ class PointMapper {
         return mappedPointPresentation
     }
 
-    func mapArray(_ points: [Point],
+    func map(_ points: [Point],
                    to pointsPresentation: [PointPresentation]) -> [PointPresentation] {
         guard points.count == pointsPresentation.count else {
             return pointsPresentation

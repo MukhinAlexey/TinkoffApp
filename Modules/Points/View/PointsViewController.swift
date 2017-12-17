@@ -7,7 +7,7 @@ class PointsViewController: UIViewController {
 
     @IBOutlet weak var mapView: GMSMapView!
 
-    @IBOutlet weak var infoView: UIView!
+    @IBOutlet weak var infoView: InfoView!
     @IBOutlet weak var infoViewBottomConstraint: NSLayoutConstraint!
 
     @IBOutlet weak var statusLabel: LabelView!
@@ -18,9 +18,18 @@ class PointsViewController: UIViewController {
 
     @IBOutlet weak var zoomInZoomOutViewRightConstraint: NSLayoutConstraint!
 
-    var isInfoViewShown = false
-
-    let screenSize = UIScreen.main.bounds
+    var pointsOnMap = [PointPresentation]()
+    var partners = [PartnerPresentation]()
+    
+    var isInfoViewShown = false {
+        didSet {
+            if isInfoViewShown {
+                hideInfoView()
+            } else {
+                showInfoView()
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +42,10 @@ class PointsViewController: UIViewController {
     private func showInfoView() {
         infoViewBottomConstraint.constant = 0.0
         UIView.animate(withDuration: 0.3) {
+            let mapViewFrame = self.mapView.frame
             self.mapView.padding = UIEdgeInsets(top: 0,
                                                 left: 0,
-                                                bottom: self.infoView.bounds.size.height / 3,
+                                                bottom: mapViewFrame.size.height / 3,
                                                 right: 0)
         }
         animateLayout()
@@ -83,7 +93,6 @@ class PointsViewController: UIViewController {
 }
 
 extension PointsViewController: PointsPresenterOutput {
-
     func didAuthorizeLocation() {
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
@@ -101,20 +110,9 @@ extension PointsViewController: PointsPresenterOutput {
                                               viewingAngle: 0))
     }
 
-    func didGetMarkers(_ coordinates: [CLLocationCoordinate2D]) {
-        for coordinate in coordinates {
-            let position = CLLocationCoordinate2D(latitude: coordinate.latitude,
-                                                  longitude: coordinate.longitude)
-            let marker = GMSMarker(position: position)
-            marker.icon = GMSMarker.markerImage(with: .red)
-            marker.map = mapView
-        }
-    }
-
     func didGet(_ points: [PointPresentation]) {
-        print(" ")
-        print("============VIEW=============")
-        print("points count: \(points.count)")
+        pointsOnMap.removeAll()
+        pointsOnMap = points
         mapView.clear()
         for point in points {
             let position = CLLocationCoordinate2D(latitude: point.coordinate.latitude,
@@ -123,8 +121,13 @@ extension PointsViewController: PointsPresenterOutput {
             marker.icon = GMSMarker.markerImage(with: .red)
             marker.title = point.partnerName
             marker.map = mapView
+            point.marker = marker
         }
         statusLabel.set("Обновлено")
+    }
+
+    func didGet(_ partners: [PartnerPresentation]) {
+        self.partners = partners
     }
 
     func didGet(error: Error) {
@@ -163,10 +166,7 @@ extension PointsViewController: GMSMapViewDelegate {
 
     func mapView(_ mapView: GMSMapView,
                  idleAt position: GMSCameraPosition) {
-
-        DispatchQueue.main.async {
-            self.showLegend()
-        }
+        showLegend()
 
         guard mapView.camera.zoom >= 15.0 else {
             mapView.clear()
@@ -187,12 +187,24 @@ extension PointsViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView,
                  didTap marker: GMSMarker) -> Bool {
         if !isInfoViewShown {
-            showInfoView()
             isInfoViewShown = true
         } else {
-            hideInfoView()
             isInfoViewShown = false
         }
+        //didUpdate(marker.position)
+        let point = pointsOnMap.first(where: {
+            $0.marker == marker
+        })
+        let partner = partners.first {
+            $0.id == point!.partnerName
+        }
+        infoView.set(partner!.name)
+        output.didTap(on: point!)
         return true
+    }
+
+    func mapView(_ mapView: GMSMapView, didTap overlay: GMSOverlay) {
+        isInfoViewShown = false
+        showLegend()
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="landscape">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -11,18 +11,27 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Bold</string>
+        </array>
+    </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InfoView" customModule="TinkoffApp" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InfoView" customModule="TinkoffApp" customModuleProvider="target">
+            <connections>
+                <outlet property="label" destination="DxD-0l-bVe" id="OXw-ce-HjZ"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="529" height="222"/>
+            <rect key="frame" x="0.0" y="0.0" width="392" height="203"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ezO-hM-6Uw">
-                    <rect key="frame" x="16" y="16" width="497" height="190"/>
+                    <rect key="frame" x="16" y="16" width="360" height="171"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qdT-Q1-pW2" customClass="RoundButton" customModule="TinkoffApp" customModuleProvider="target">
-                            <rect key="frame" x="8" y="8" width="152" height="152"/>
+                            <rect key="frame" x="8" y="8" width="68.5" height="68.5"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="qdT-Q1-pW2" secondAttribute="height" id="ByD-M5-cW5"/>
                             </constraints>
@@ -32,9 +41,17 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Евросеть" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DxD-0l-bVe">
+                            <rect key="frame" x="92.5" y="8" width="83.5" height="25"/>
+                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <constraints>
+                        <constraint firstItem="DxD-0l-bVe" firstAttribute="leading" secondItem="qdT-Q1-pW2" secondAttribute="trailing" constant="16" id="4Pw-PW-Lex"/>
                         <constraint firstItem="qdT-Q1-pW2" firstAttribute="height" secondItem="ezO-hM-6Uw" secondAttribute="height" multiplier="0.4" id="ANw-pG-ktV"/>
+                        <constraint firstItem="DxD-0l-bVe" firstAttribute="top" secondItem="ezO-hM-6Uw" secondAttribute="top" constant="8" id="Dwd-F0-Nv0"/>
                         <constraint firstItem="qdT-Q1-pW2" firstAttribute="height" secondItem="ezO-hM-6Uw" secondAttribute="height" multiplier="0.8" id="Njp-mu-egG"/>
                         <constraint firstItem="qdT-Q1-pW2" firstAttribute="top" secondItem="ezO-hM-6Uw" secondAttribute="top" constant="8" id="NsC-7u-tcy"/>
                         <constraint firstItem="qdT-Q1-pW2" firstAttribute="leading" secondItem="ezO-hM-6Uw" secondAttribute="leading" constant="8" id="VMZ-gi-h0V"/>
@@ -66,7 +83,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="110.5" y="-120"/>
+            <point key="canvasLocation" x="42" y="-129.5"/>
         </view>
     </objects>
 </document>

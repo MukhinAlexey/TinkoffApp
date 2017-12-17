@@ -3,7 +3,6 @@ import UIKit
 class PointsModuleConfigurator {
 
     func configureModuleForViewInput<UIViewController>(viewInput: UIViewController) {
-
         if let viewController = viewInput as? PointsViewController {
             configure(viewController: viewController)
         }
@@ -28,6 +27,8 @@ class PointsModuleConfigurator {
         interactor.imageDownloaderService = imageDownloaderService
         interactor.networkService = networkService
         interactor.locationService = locationService
+        interactor.coreDataService = CoreDataService(coreDataStack: CoreDataStack())
+
         presenter.interactor = interactor
         viewController.output = presenter
     }

@@ -2,10 +2,10 @@ import UIKit
 
 class PartnerPresentation {
 
-    var id: String
-    var name: String
-    var picture: String
-    var url: String
+    var id: String!
+    var name: String!
+    var picture: String!
+    // var url: String!
 
     //var depositionDuration: String
     //var hasLocations: Bool
@@ -13,14 +13,14 @@ class PartnerPresentation {
     //var limitations: String
     //var pointType: String
 
+    init() {}
+
     init(id: String,
          name: String,
-         picture: String,
-         url: String) {
+         picture: String) {
         self.id = id
         self.name = name
         self.picture = picture
-        self.url = url
     }
 
     init(id: String,
@@ -35,6 +35,5 @@ class PartnerPresentation {
         self.id = id
         self.name = name
         self.picture = picture
-        self.url = url
     }
 }

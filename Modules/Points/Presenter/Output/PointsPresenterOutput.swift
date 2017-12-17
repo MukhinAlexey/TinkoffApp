@@ -7,6 +7,7 @@ protocol PointsPresenterOutput: class {
     func didUpdate(_ coordinates: CLLocationCoordinate2D)
 
     func didGet(_ points: [PointPresentation])
+    func didGet(_ partners: [PartnerPresentation])
 
     func didGet(error: Error)
 

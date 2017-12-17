@@ -47,7 +47,7 @@
 		8AF1CC771FE50F9A00D67198 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF1CC761FE50F9A00D67198 /* InfoView.swift */; };
 		8AF1CC791FE50FA500D67198 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AF1CC781FE50FA500D67198 /* InfoView.xib */; };
 		8AF1CC7B1FE50FCC00D67198 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF1CC7A1FE50FCC00D67198 /* BaseView.swift */; };
-		8AF791B71FE2FDBE0074290C /* PartnerToPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF791B61FE2FDBE0074290C /* PartnerToPresentation.swift */; };
+		8AF791B71FE2FDBE0074290C /* PartnerMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF791B61FE2FDBE0074290C /* PartnerMapper.swift */; };
 		8AF791BA1FE3013C0074290C /* TinkoffError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF791B91FE3013C0074290C /* TinkoffError.swift */; };
 		8AF791C11FE44D160074290C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF791C01FE44D160074290C /* CoreDataStack.swift */; };
 		8AF791C31FE48E9C0074290C /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF791C21FE48E9C0074290C /* LocationService.swift */; };
@@ -131,7 +131,7 @@
 		8AF1CC761FE50F9A00D67198 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		8AF1CC781FE50FA500D67198 /* InfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
 		8AF1CC7A1FE50FCC00D67198 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
-		8AF791B61FE2FDBE0074290C /* PartnerToPresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartnerToPresentation.swift; sourceTree = "<group>"; };
+		8AF791B61FE2FDBE0074290C /* PartnerMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartnerMapper.swift; sourceTree = "<group>"; };
 		8AF791B91FE3013C0074290C /* TinkoffError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffError.swift; sourceTree = "<group>"; };
 		8AF791C01FE44D160074290C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		8AF791C21FE48E9C0074290C /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
@@ -502,7 +502,7 @@
 			isa = PBXGroup;
 			children = (
 				8AF791C61FE4A6560074290C /* PointMapper.swift */,
-				8AF791B61FE2FDBE0074290C /* PartnerToPresentation.swift */,
+				8AF791B61FE2FDBE0074290C /* PartnerMapper.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -937,7 +937,7 @@
 				8AB3C19E1FE2E27700BAE5C0 /* Point+CoreDataClass.swift in Sources */,
 				8AA0776A1FE68E0900F94432 /* PointsInteractorInput.swift in Sources */,
 				8AB3C1A11FE2E27700BAE5C0 /* Partner+CoreDataProperties.swift in Sources */,
-				8AF791B71FE2FDBE0074290C /* PartnerToPresentation.swift in Sources */,
+				8AF791B71FE2FDBE0074290C /* PartnerMapper.swift in Sources */,
 				8AF791C31FE48E9C0074290C /* LocationService.swift in Sources */,
 				367C54BC261A4C36E72D8CD3 /* PointsConfigurator.swift in Sources */,
 				D7A0DDF34457D3440FDDCF0B /* PointsIncreaseInitializer.swift in Sources */,

@@ -7,10 +7,11 @@ public class Partner: NSManagedObject {
 }
 
 extension Partner {
-    convenience init?(json: [String: Any],
-                      insertIntoManagedObjectContext context: NSManagedObjectContext) {
-        let entity = NSEntityDescription.entity(forEntityName: "Partner", in: context)!
-        self.init(entity: entity, insertInto: context)
+
+    static let entityName = "Partner"
+
+    static func update(json: [String: Any],
+                       intoManagedObjectContext context: NSManagedObjectContext) -> Partner? {
 
         guard
             let id = json["id"] as? String,
@@ -19,8 +20,31 @@ extension Partner {
                 return nil
         }
 
-        self.id = id
-        self.name = name
-        self.picture = picture
+        let partner = getPartner(with: id, in: context)
+
+        partner.id = id
+        partner.name = name
+        partner.picture = picture
+
+        return partner
+    }
+
+    static func getPartner(with id: String,
+                           in context: NSManagedObjectContext) -> Partner {
+        let fetchRequest = NSFetchRequest<Partner>(entityName: "Partner")
+
+        fetchRequest.predicate = NSPredicate(format: "id = %@", id)
+
+        do {
+            let fetchResults = try context.fetch(fetchRequest)
+            if fetchResults.count != 0 {
+                return fetchResults.first!
+            }
+        } catch {
+            return NSEntityDescription.insertNewObject(forEntityName: Partner.entityName,
+                                                       into: context) as! Partner
+        }
+        return NSEntityDescription.insertNewObject(forEntityName: Partner.entityName,
+                                                   into: context) as! Partner
     }
 }

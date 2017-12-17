@@ -11,14 +11,14 @@ extension Point {
     static let entityName = "Point"
 
     static func update(json: [String: Any],
-                       insertIntoManagedObjectContext context: NSManagedObjectContext) -> Point {
+                       insertIntoManagedObjectContext context: NSManagedObjectContext) -> Point? {
 
         guard
             let partnerName = json["partnerName"] as? String,
             let coordinates = json["location"] as? [String: Any],
             let lat = coordinates["latitude"] as? NSNumber,
             let lon = coordinates["longitude"] as? NSNumber else {
-                return NSEntityDescription.insertNewObject(forEntityName: Point.entityName, into: context) as! Point
+                return nil
         }
 
         let point = get(byLatitude: NSDecimalNumber(decimal: lat.decimalValue),
