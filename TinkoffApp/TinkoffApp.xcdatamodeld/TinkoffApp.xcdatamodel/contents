@@ -8,6 +8,7 @@
         <attribute name="limitations" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="picture" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pictureLastModified" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pointType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="partnerToBalanceIncreasePoint" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Point" syncable="YES"/>
@@ -29,7 +30,7 @@
         <relationship name="pointToPartner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Partner" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Partner" positionX="-324" positionY="-18" width="128" height="195"/>
+        <element name="Partner" positionX="-324" positionY="-18" width="128" height="210"/>
         <element name="Point" positionX="-117" positionY="-18" width="128" height="180"/>
     </elements>
 </model>

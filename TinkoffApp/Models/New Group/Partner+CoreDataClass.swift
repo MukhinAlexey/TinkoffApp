@@ -10,8 +10,8 @@ extension Partner {
 
     static let entityName = "Partner"
 
-    static func update(json: [String: Any],
-                       intoManagedObjectContext context: NSManagedObjectContext) -> Partner? {
+    static func updateOrInsertNew(json: [String: Any],
+                                  intoManagedObjectContext context: NSManagedObjectContext) -> Partner? {
 
         guard
             let id = json["id"] as? String,
@@ -20,17 +20,39 @@ extension Partner {
                 return nil
         }
 
-        let partner = getPartner(with: id, in: context)
+        let partnerOptional = getPartner(withId: id, in: context)
+        var partner: Partner
+
+        if partnerOptional == nil {
+            partner = NSEntityDescription.insertNewObject(forEntityName: Partner.entityName,
+                                                          into: context) as! Partner
+        } else {
+            partner = partnerOptional!
+        }
 
         partner.id = id
         partner.name = name
         partner.picture = picture
 
-        return partner
+        return partnerOptional
     }
 
-    static func getPartner(with id: String,
-                           in context: NSManagedObjectContext) -> Partner {
+    static func update(withId id: String,
+                       lastModified: String,
+                       intoManagedObjectContext context: NSManagedObjectContext) -> Partner? {
+
+        let partnerOptional = getPartner(withId: id, in: context)
+
+        guard let partner = partnerOptional else {
+            return nil
+        }
+
+        partner.pictureLastModified = lastModified
+        return partner
+    }
+    
+    static func getPartner(withId id: String,
+                           in context: NSManagedObjectContext) -> Partner? {
         let fetchRequest = NSFetchRequest<Partner>(entityName: "Partner")
 
         fetchRequest.predicate = NSPredicate(format: "id = %@", id)
@@ -41,10 +63,8 @@ extension Partner {
                 return fetchResults.first!
             }
         } catch {
-            return NSEntityDescription.insertNewObject(forEntityName: Partner.entityName,
-                                                       into: context) as! Partner
+            return nil
         }
-        return NSEntityDescription.insertNewObject(forEntityName: Partner.entityName,
-                                                   into: context) as! Partner
+        return nil
     }
 }

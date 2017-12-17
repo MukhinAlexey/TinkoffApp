@@ -1,9 +1,10 @@
 import Foundation
 import CoreLocation
+import UIKit
 
 protocol PointsInteractorOutput: class {
 
-    func didLoad(_ imageData: Data, for point: PointPresentation)
+    func didLoad(_ image: UIImage, for point: PointPresentation)
 
     func didAuthorizeLocation()
 

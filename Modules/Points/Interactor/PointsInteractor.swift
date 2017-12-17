@@ -3,7 +3,7 @@ import CoreLocation
 
 class PointsInteractor {
     weak var output: PointsInteractorOutput!
-    var imageDownloaderService: ImageDownloaderService!
+    var imageDownloaderService: ImageDownloadService!
     var networkService: NetworkService!
     var locationService: LocationService!
     var coreDataService: CoreDataService!
@@ -30,7 +30,7 @@ extension PointsInteractor: PointsInteractorInput {
 
         coreDataService.getPartners(completition: self.returnToView(_:error:))
 
-        networkService.getPartnersList { partners, error in
+        networkService.getPartners { partners, error in
 
             guard
                 error == nil,
@@ -44,9 +44,11 @@ extension PointsInteractor: PointsInteractorInput {
     }
 
     private func returnToView(_ partners: [Partner]?, error: Error?) {
+
         guard
             error == nil,
-            let partners = partners else {
+            let partners = partners,
+            partners.count > 0 else {
                 return
         }
         let partnersPresentationInit = [PartnerPresentation](repeating: PartnerPresentation(),
@@ -132,14 +134,34 @@ extension PointsInteractor: PointsInteractorInput {
     }
 
     func tap(on point: PointPresentation) {
-        imageDownloaderService.downloadImage(named: point.picture) { imageData, error in
+
+        coreDataService.getPartner(withId: point.partnerName) { partner, error in
+
             guard
                 error == nil,
-                let imageData = imageData else {
+                let partner = partner else {
                     return
             }
-            DispatchQueue.main.async {
-                self.output.didLoad(imageData, for: point)
+
+            self.imageDownloaderService.downloadImage(named: point.picture,
+                                                      withLastModified: partner.pictureLastModified,
+                                                      withPixelSize: "mdpi")
+            { image, lastModified, error in
+
+                guard
+                    error == nil,
+                    let image = image,
+                    let lastModified = lastModified else {
+                        return
+                }
+
+                DispatchQueue.main.async {
+                    self.output.didLoad(image, for: point)
+                }
+
+                self.coreDataService.savePartner(withId: point.partnerName, lastModified: lastModified) { _ in
+
+                }
             }
         }
     }

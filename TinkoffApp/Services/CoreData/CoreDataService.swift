@@ -18,14 +18,26 @@ extension CoreDataService {
         var partnersObject = [Partner]()
         coreDataStack.saveContext.perform {
             for partner in partners {
-                let partnerObjectOptional = Partner.update(json: partner,
-                                                           intoManagedObjectContext: self.coreDataStack.saveContext)
+                let partnerObjectOptional = Partner.updateOrInsertNew(json: partner,
+                                                                      intoManagedObjectContext: self.coreDataStack.saveContext)
                 guard let partnerObject = partnerObjectOptional else {
                     continue
                 }
                 partnersObject.append(partnerObject)
             }
             completition(partnersObject, nil)
+            self.coreDataStack.performSave(in: self.coreDataStack.saveContext, completionHandler: nil)
+        }
+    }
+
+    func savePartner(withId id: String,
+                     lastModified: String,
+                     completition: @escaping (Partner?) -> Void) {
+        coreDataStack.saveContext.perform {
+            let partnerObject = Partner.update(withId: id,
+                                               lastModified: lastModified,
+                                               intoManagedObjectContext: self.coreDataStack.saveContext)
+            completition(partnerObject)
             self.coreDataStack.performSave(in: self.coreDataStack.saveContext, completionHandler: nil)
         }
     }
@@ -56,6 +68,14 @@ extension CoreDataService {
             } catch {
                 completition(nil, error)
             }
+        }
+    }
+
+    func getPartner(withId id: String,
+                    completition: @escaping (Partner?, Error?) -> Void) {
+        coreDataStack.readContext.perform {
+            let partner = Partner.getPartner(withId: id, in: self.coreDataStack.readContext)
+            completition(partner, nil)
         }
     }
 

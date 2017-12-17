@@ -2,7 +2,7 @@ import UIKit
 import CoreData
 import CoreLocation
 
-class NetworkService: NSObject {
+class NetworkService {
 
     private let partnersListURL: String
     private let pointsURL: String
@@ -19,19 +19,20 @@ class NetworkService: NSObject {
         var request = URLRequest(url: URL(string: urlString)!)
         request.httpMethod = method
         request.httpBody = parameters.data(using: String.Encoding.utf8)
-        let session = URLSession.shared
 
-        session.dataTask(with: request) { data, response, error in
+        URLSession.shared.dataTask(with: request) { data, response, error in
 
-            guard error == nil, let data = data else {
-                completition(nil, error)
-                return
+            guard error == nil,
+                let data = data else {
+                    completition(nil, error)
+                    return
             }
+            
             completition(data, nil)
             }.resume()
     }
 
-    func getPartnersList(completition: @escaping ([[String:AnyObject]]?, Error?) -> Void) {
+    func getPartners(completition: @escaping ([[String:AnyObject]]?, Error?) -> Void) {
         makeCall(withMethod: "POST",
                  toUrl: partnersListURL,
                  withParameters: "")
@@ -87,7 +88,40 @@ class NetworkService: NSObject {
             let unwrapedJSONDataNotNilArray = unwrapedJSONDataNotNil as? [[String:AnyObject]] else {
                 return (nil, TinkoffError.jsonSerializationError)
         }
-
         return (unwrapedJSONDataNotNilArray, nil)
     }
+
+    func makeCall(withMethod method: String,
+                  toUrl urlString: String,
+                  lastModified: String,
+                  completition: @escaping(Data?, [AnyHashable: Any]?, Error?) -> Void) {
+        var request = URLRequest(url: URL(string: urlString)!,
+                                 cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
+                                 timeoutInterval: 60.0)
+        request.httpMethod = method
+        request.addValue(lastModified,
+                         forHTTPHeaderField: "If-Modified-Since")
+
+        print(request)
+
+        URLSession.shared.dataTask(with: request) { data, response, error in
+
+            print(data)
+            print(error)
+            print(response)
+
+            guard
+                error == nil,
+                let data = data,
+                let response = response as? HTTPURLResponse else {
+                    return completition(nil, nil, error)
+            }
+            if response.statusCode == 304 {
+                return completition(nil, nil, nil)
+            }
+            let headers = response.allHeaderFields
+            completition(data, headers, nil)
+            }.resume()
+    }
+
 }

@@ -34,8 +34,7 @@ extension PointsPresenter: PointsPresenterInput {
         view.didGet(partners)
     }
 
-    func didLoad(_ imageData: Data, for point: PointPresentation) {
-        let image = UIImage(data: imageData, scale: 1.0)!
+    func didLoad(_ image: UIImage, for point: PointPresentation) {
         view.didLoad(image, for: point)
     }
 
