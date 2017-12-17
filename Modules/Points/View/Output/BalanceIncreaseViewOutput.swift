@@ -5,5 +5,5 @@ protocol BalanceIncreaseViewOutput {
     func mapMove(to coordinate: CLLocationCoordinate2D,
                  topRightCordinate: CLLocationCoordinate2D,
                  bottomLeftCordinate: CLLocationCoordinate2D)
-    func didTap(on point: PointPresentation)
+    func tap(on point: PointPresentation)
 }

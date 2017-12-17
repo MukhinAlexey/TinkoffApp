@@ -17,7 +17,6 @@ class PointsInteractor {
 }
 
 extension PointsInteractor: PointsInteractorInput {
-
     func authLocationService() {
         locationService.auth()
         locationService.delegate = self
@@ -129,6 +128,19 @@ extension PointsInteractor: PointsInteractorInput {
             }
 
             self.coreDataService.savePoints(pointsJSON, completition: self.returnToView(_:error:))
+        }
+    }
+
+    func tap(on point: PointPresentation) {
+        imageDownloaderService.downloadImage(named: point.picture) { imageData, error in
+            guard
+                error == nil,
+                let imageData = imageData else {
+                    return
+            }
+            DispatchQueue.main.async {
+                self.output.didLoad(imageData, for: point)
+            }
         }
     }
 }

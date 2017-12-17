@@ -8,18 +8,21 @@ class ImageDownloaderService: NSObject {
         self.config = config
     }
 
-    func downloadImage(named name: String) {
+    func downloadImage(named name: String,
+                       completition: @escaping (Data?, Error?) -> Void) {
         print("Download Started")
-        guard let url = URL(string: config.downloadImagesURL) else {
+        guard let url = URL(string: config.downloadImagesURL.appending("mdpi/\(name)")) else {
             return
         }
         getDataFromUrl(url: url) { data, response, error in
-            guard let data = data, error == nil else { return }
+            guard
+                let data = data,
+                error == nil else {
+                    return completition(nil, error)
+            }
             print(response?.suggestedFilename ?? url.lastPathComponent)
             print("Download Finished")
-            DispatchQueue.main.async {
-                // imageView.image = UIImage(data: data)
-            }
+            completition(data, error)
         }
     }
 

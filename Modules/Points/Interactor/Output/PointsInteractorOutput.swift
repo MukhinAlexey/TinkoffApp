@@ -3,7 +3,7 @@ import CoreLocation
 
 protocol PointsInteractorOutput: class {
 
-    func didLoad(_ image: Data, for balanceIncreasePoint: NSObject)
+    func didLoad(_ imageData: Data, for point: PointPresentation)
 
     func didAuthorizeLocation()
 

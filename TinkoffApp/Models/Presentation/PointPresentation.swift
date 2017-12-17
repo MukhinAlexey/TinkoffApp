@@ -8,6 +8,7 @@ class PointPresentation {
     //var addressInfo: String?
     //var fullAddress: String?
     var partnerName: String!
+    var picture: String!
     //var phone: String?
     //var workHours: String?
     //var balanceIncreasePointToPartner: Partner?

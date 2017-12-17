@@ -1,5 +1,6 @@
 import Foundation
 import CoreLocation
+import UIKit
 
 class PointsPresenter {
     weak var view: PointsPresenterOutput!
@@ -17,6 +18,10 @@ class PointsPresenter {
                            topRightCordinate: topRightCordinate,
                            bottomLeftCordinate: bottomLeftCordinate)
     }
+
+    func tap(on point: PointPresentation) {
+        interactor.tap(on: point)
+    }
 }
 
 extension PointsPresenter: PointsPresenterInput {
@@ -29,9 +34,9 @@ extension PointsPresenter: PointsPresenterInput {
         view.didGet(partners)
     }
 
-    func didLoad(_ image: Data,
-                 for balanceIncreasePoint: NSObject) {
-
+    func didLoad(_ imageData: Data, for point: PointPresentation) {
+        let image = UIImage(data: imageData, scale: 1.0)!
+        view.didLoad(image, for: point)
     }
 
     func didAuthorizeLocation() {
@@ -40,10 +45,6 @@ extension PointsPresenter: PointsPresenterInput {
 
     func didUpdate(_ coordinates: CLLocationCoordinate2D) {
         view.didUpdate(coordinates)
-    }
-
-    func didTap(on point: PointPresentation) {
-        
     }
 
     func didGoOnline() {

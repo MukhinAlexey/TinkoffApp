@@ -24,9 +24,9 @@ class PointsViewController: UIViewController {
     var isInfoViewShown = false {
         didSet {
             if isInfoViewShown {
-                hideInfoView()
-            } else {
                 showInfoView()
+            } else {
+                hideInfoView()
             }
         }
     }
@@ -89,7 +89,6 @@ class PointsViewController: UIViewController {
         let zoomOutCamera = GMSCameraUpdate.zoomOut()
         mapView.animate(with: zoomOutCamera)
     }
-
 }
 
 extension PointsViewController: PointsPresenterOutput {
@@ -98,9 +97,8 @@ extension PointsViewController: PointsPresenterOutput {
         mapView.settings.myLocationButton = true
     }
 
-    func didLoad(_ image: Data,
-                 for point: PointPresentation) {
-
+    func didLoad(_ image: UIImage, for point: PointPresentation) {
+        infoView.set(image)
     }
 
     func didUpdate(_ coordinates: CLLocationCoordinate2D) {
@@ -167,6 +165,7 @@ extension PointsViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView,
                  idleAt position: GMSCameraPosition) {
         showLegend()
+        isInfoViewShown = false
 
         guard mapView.camera.zoom >= 15.0 else {
             mapView.clear()
@@ -188,18 +187,17 @@ extension PointsViewController: GMSMapViewDelegate {
                  didTap marker: GMSMarker) -> Bool {
         if !isInfoViewShown {
             isInfoViewShown = true
-        } else {
-            isInfoViewShown = false
         }
         //didUpdate(marker.position)
         let point = pointsOnMap.first(where: {
             $0.marker == marker
-        })
+        })!
         let partner = partners.first {
-            $0.id == point!.partnerName
-        }
-        infoView.set(partner!.name)
-        output.didTap(on: point!)
+            $0.id == point.partnerName
+        }!
+        point.picture = partner.picture
+        infoView.set(partner.name)
+        output.tap(on: point)
         return true
     }
 

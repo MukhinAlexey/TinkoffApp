@@ -9,4 +9,6 @@ protocol PointsInteractorInput: class {
     func mapMove(to coordinate: CLLocationCoordinate2D,
                  topRightCordinate: CLLocationCoordinate2D,
                  bottomLeftCordinate: CLLocationCoordinate2D)
+
+    func tap(on point: PointPresentation)
 }

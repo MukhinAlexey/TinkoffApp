@@ -20,6 +20,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InfoView" customModule="TinkoffApp" customModuleProvider="target">
             <connections>
                 <outlet property="label" destination="DxD-0l-bVe" id="OXw-ce-HjZ"/>
+                <outlet property="roundView" destination="qdT-Q1-pW2" id="TXR-0w-N90"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
