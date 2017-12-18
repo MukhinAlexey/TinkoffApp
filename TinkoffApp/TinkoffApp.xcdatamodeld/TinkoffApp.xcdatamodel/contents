@@ -4,6 +4,7 @@
         <attribute name="depositionDuration" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="hasLocations" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="id" attributeType="String" syncable="YES"/>
+        <attribute name="info" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isMomentary" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="limitations" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -30,7 +31,7 @@
         <relationship name="pointToPartner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Partner" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Partner" positionX="-324" positionY="-18" width="128" height="210"/>
+        <element name="Partner" positionX="-324" positionY="-18" width="128" height="225"/>
         <element name="Point" positionX="-117" positionY="-18" width="128" height="180"/>
     </elements>
 </model>

@@ -2,13 +2,14 @@ import Foundation
 import CoreLocation
 import UIKit
 
+// Презентер просто проксирует, получилось так себе
 class PointsPresenter {
     weak var view: PointsPresenterOutput!
     var interactor: PointsInteractorInput!
 
     func viewIsReady() {
         interactor.authLocationService()
-        interactor.getPartnersList()
+        interactor.getPartners()
     }
 
     func mapMove(to coordinate: CLLocationCoordinate2D,
@@ -25,7 +26,6 @@ class PointsPresenter {
 }
 
 extension PointsPresenter: PointsPresenterInput {
-
     func didGet(_ points: [PointPresentation]) {
         view.didGet(points)
     }
@@ -34,12 +34,20 @@ extension PointsPresenter: PointsPresenterInput {
         view.didGet(partners)
     }
 
+    func didNotGetPartners(with errorMessage: String) {
+        view.didNotGetPartners(with: errorMessage)
+    }
+
     func didLoad(_ image: UIImage, for point: PointPresentation) {
         view.didLoad(image, for: point)
     }
 
     func didAuthorizeLocation() {
         view.didAuthorizeLocation()
+    }
+
+    func didFinishUpdating() {
+        view.didFinishUpdating()
     }
 
     func didUpdate(_ coordinates: CLLocationCoordinate2D) {
@@ -52,5 +60,9 @@ extension PointsPresenter: PointsPresenterInput {
     
     func didGoOffline() {
         view.didGoOffline()
+    }
+
+    func didGet(_ errorMessage: String) {
+        view.didGet(errorMessage)
     }
 }

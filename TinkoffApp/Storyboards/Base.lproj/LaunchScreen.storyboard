@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -11,27 +11,41 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TinkoffLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Ph2-KG-qNt">
-                                <rect key="frame" x="75.5" y="244" width="223" height="167"/>
+                                <rect key="frame" x="80" y="174" width="160" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ph2-KG-qNt" secondAttribute="height" multiplier="4:3" id="xeM-ZX-Uhc"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пополняйка" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUo-7p-aGc">
+                                <rect key="frame" x="80" y="302" width="160" height="27.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Ph2-KG-qNt" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.25" id="BmS-uJ-Hc6"/>
                             <constraint firstItem="Ph2-KG-qNt" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-16" id="GUj-bp-URq"/>
+                            <constraint firstItem="TUo-7p-aGc" firstAttribute="width" secondItem="Ph2-KG-qNt" secondAttribute="width" id="ZqE-RI-L3r"/>
                             <constraint firstItem="Ph2-KG-qNt" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="o5J-Qz-Cd7"/>
+                            <constraint firstItem="TUo-7p-aGc" firstAttribute="top" secondItem="Ph2-KG-qNt" secondAttribute="bottom" constant="8" id="pam-AA-lEY"/>
+                            <constraint firstItem="TUo-7p-aGc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="x0R-mG-azU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

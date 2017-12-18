@@ -5,6 +5,7 @@ class PartnerPresentation {
     var id: String!
     var name: String!
     var picture: String!
+    var info: String!
     // var url: String!
 
     //var depositionDuration: String
@@ -17,23 +18,11 @@ class PartnerPresentation {
 
     init(id: String,
          name: String,
-         picture: String) {
-        self.id = id
-        self.name = name
-        self.picture = picture
-    }
-
-    init(id: String,
-         name: String,
          picture: String,
-         url: String,
-         depositionDuration: String,
-         hasLocations: Bool,
-         isMomentary: Bool,
-         limitations: String,
-         pointType: String) {
+         info: String) {
         self.id = id
         self.name = name
         self.picture = picture
+        self.info = info
     }
 }

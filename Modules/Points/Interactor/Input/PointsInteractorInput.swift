@@ -4,7 +4,7 @@ import CoreLocation
 protocol PointsInteractorInput: class {
 
     func authLocationService()
-    func getPartnersList()
+    func getPartners()
 
     func mapMove(to coordinate: CLLocationCoordinate2D,
                  topRightCordinate: CLLocationCoordinate2D,

@@ -2,76 +2,62 @@ import UIKit
 import CoreData
 import CoreLocation
 
+enum NetworkRequestMethod {
+    case POST
+    case GET
+
+    var string: String {
+        switch self {
+        case .POST:
+            return "POST"
+        case .GET:
+            return "GET"
+        }
+    }
+}
+
+enum NetworkRequest {
+    case points
+    case partners
+    case images
+}
+
 class NetworkService {
 
-    private let partnersListURL: String
-    private let pointsURL: String
+    let networkConfig: NetworkServiceConfig
 
-    init(config: NetworkServiceConfig) {
-        partnersListURL = config.partnersListURL
-        pointsURL = config.pointsURL
+    init(networkConfig: NetworkServiceConfig) {
+        self.networkConfig = networkConfig
     }
 
-    private func makeCall(withMethod method: String,
-                          toUrl urlString: String,
-                          withParameters parameters: String,
-                          completition: @escaping(Data?, Error?) -> Void) {
-        var request = URLRequest(url: URL(string: urlString)!)
-        request.httpMethod = method
-        request.httpBody = parameters.data(using: String.Encoding.utf8)
+    func makeCall(withMethod method: NetworkRequestMethod,
+                  withRequest requestType: NetworkRequest,
+                  withParameters parameters: String? = nil,
+                  withCustomUrlSuffix customUrlSuffix: String? = nil,
+                  completition: @escaping(Data?, Error?) -> Void) {
 
-        URLSession.shared.dataTask(with: request) { data, response, error in
+        var urlString = networkConfig.getUrl(for: requestType)
+
+        if let customUrlSuffix = customUrlSuffix {
+            urlString = urlString.appending(customUrlSuffix)
+        }
+
+        var request = URLRequest(url: URL(string: urlString)!)
+        request.httpMethod = method.string
+
+        if parameters != nil {
+            request.httpBody = parameters!.data(using: String.Encoding.utf8)
+        }
+
+        URLSession.shared.dataTask(with: request) { data, _, error in
 
             guard error == nil,
                 let data = data else {
                     completition(nil, error)
                     return
             }
-            
             completition(data, nil)
             }.resume()
-    }
-
-    func getPartners(completition: @escaping ([[String:AnyObject]]?, Error?) -> Void) {
-        makeCall(withMethod: "POST",
-                 toUrl: partnersListURL,
-                 withParameters: "")
-        { data, error in
-
-            guard
-                error == nil,
-                let data = data else {
-                    completition(nil, TinkoffError.jsonSerializationError)
-                    return
-            }
-
-            let (unwrapedJSONData, error) = self.JSONTransform(from: data)
-            completition(unwrapedJSONData, error)
-        }
-    }
-
-    func getPoints(for coordinates: CLLocationCoordinate2D,
-                   with searchRadius: CLLocationDistance,
-                   completition: @escaping ([[String:AnyObject]]?, Error?) -> Void) {
-
-        let parameters = "latitude=\(coordinates.latitude)&longitude=\(coordinates.longitude)&radius=\(Int(searchRadius))"
-
-        makeCall(withMethod: "POST",
-                 toUrl: pointsURL,
-                 withParameters: parameters)
-        { data, error in
-
-            guard
-                error == nil,
-                let data = data else {
-                    completition(nil, TinkoffError.jsonSerializationError)
-                    return
-            }
-
-            let (unwrapedJSONData, error) = self.JSONTransform(from: data)
-
-            completition(unwrapedJSONData, error)
-        }
     }
 
     func JSONTransform(from data: Data) -> ([[String: AnyObject]]?, Error?) {
@@ -91,18 +77,24 @@ class NetworkService {
         return (unwrapedJSONDataNotNilArray, nil)
     }
 
-    func makeCall(withMethod method: String,
-                  toUrl urlString: String,
+    func makeCall(withMethod method: NetworkRequestMethod,
+                  withRequest requestType: NetworkRequest,
+                  withCustomUrlSuffix customUrlSuffix: String? = nil,
                   lastModified: String,
                   completition: @escaping(Data?, [AnyHashable: Any]?, Error?) -> Void) {
+
+        var urlString = networkConfig.getUrl(for: requestType)
+
+        if let customUrlSuffix = customUrlSuffix {
+            urlString = urlString.appending(customUrlSuffix)
+        }
+
         var request = URLRequest(url: URL(string: urlString)!,
                                  cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
                                  timeoutInterval: 60.0)
-        request.httpMethod = method
+        request.httpMethod = method.string
         request.addValue(lastModified,
                          forHTTPHeaderField: "If-Modified-Since")
-
-        print(request)
 
         URLSession.shared.dataTask(with: request) { data, response, error in
 

@@ -16,6 +16,7 @@ extension Partner {
         guard
             let id = json["id"] as? String,
             let name = json["name"] as? String,
+            let description = json["description"] as? String,
             let picture = json["picture"] as? String else {
                 return nil
         }
@@ -33,6 +34,7 @@ extension Partner {
         partner.id = id
         partner.name = name
         partner.picture = picture
+        partner.info = description
 
         return partner
     }

@@ -8,5 +8,4 @@ class PointsModuleInitializer: NSObject {
         let configurator = PointsModuleConfigurator()
         configurator.configureModuleForViewInput(viewInput: balanceincreaseViewController)
     }
-
 }

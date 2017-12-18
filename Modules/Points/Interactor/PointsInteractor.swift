@@ -3,47 +3,77 @@ import CoreLocation
 
 class PointsInteractor {
     weak var output: PointsInteractorOutput!
-    var imageDownloaderService: ImageDownloadService!
-    var networkService: NetworkService!
+    var imageDownloadService: ImageDownloadService!
+    var partnerService: PartnerNetworkService!
+    var pointService: PointNetworkService!
     var locationService: LocationService!
     var coreDataService: CoreDataService!
 
+    private var lastVisitedCoordinate: CLLocationCoordinate2D!
+
+    private let reachability = Reachability()!
+
     private var isUserPostionSet = false
-    private var lastCoordinate: CLLocationCoordinate2D!
-
-    let reachability = Reachability()!
-
-    var isFirstLaunch = true
+    private var isFirstLaunch = true
 }
 
 extension PointsInteractor: PointsInteractorInput {
+
     func authLocationService() {
         locationService.auth()
         locationService.delegate = self
     }
 
-    func getPartnersList() {
+    func getPartners() {
+        coreDataService.getPartners { partners, error in
 
-        guard reachability.connection != .none else {
-            return
-        }
-
-        coreDataService.getPartners(completition: self.returnToView(_:error:))
-
-        networkService.getPartners { partners, error in
-
-            guard
-                error == nil,
-                let partners = partners else {
-                    return
+            // Не сделал нормальную обработку ошибок, отсюда такое не красивое условие
+            if (error != nil || partners == nil) && self.reachability.connection == .none ||
+                (partners != nil && partners!.count == 0 && self.reachability.connection == .none) {
+                print("САМЫЙ ПЕРВЫЙ ВХОД В ПРИЛОЖЕНИЕ ПРОИЗОШЕЛ БЕЗ ИНТЕРНЕТА")
+                let errorMessage = TinkoffError.furstTimeAuthorizationError.errorDescription
+                self.output.didNotGetPartners(with: errorMessage)
+                return
             }
 
-            self.coreDataService.savePartners(partners, completition: self.returnToView(_:error:))
+            self.returnToView(partners, error: error)
+
+            guard self.reachability.connection != .none else {
+                DispatchQueue.main.async {
+                    self.output.didGoOffline()
+                }
+                return
+            }
+
+            self.partnerService.getPartners { partners, error in
+                guard
+                    error == nil,
+                    let partners = partners else {
+                        return
+                }
+                self.coreDataService.savePartners(partners, completition: self.returnToView(_:error:))
+            }
         }
+
     }
 
     private func returnToView(_ partners: [Partner]?, error: Error?) {
+        guard
+            error == nil,
+            let partners = partners,
+            partners.count > 0 else {
+                return
+        }
+        let partnersPresentationInit = [PartnerPresentation](repeating: PartnerPresentation(),
+                                                             count: partners.count)
 
+        let partnersPresentation = PartnerMapper().map(partners, to: partnersPresentationInit)
+        DispatchQueue.main.async {
+            self.output.didGet(partnersPresentation)
+        }
+    }
+
+    private func returnToViewWithCheckOfFirstEnter(_ partners: [Partner]?, error: Error?) {
         guard
             error == nil,
             let partners = partners,
@@ -87,18 +117,17 @@ extension PointsInteractor: PointsInteractorInput {
             }
         }
 
-        coreDataService
-            .getPoints(for: coordinate,
-                       topRightCoordinate: topRightCordinate,
-                       bottomLeftCoordinate: bottomLeftCordinate,
-                       completition: returnToView(_:error:))
+        coreDataService.getPoints(for: coordinate,
+                                  topRightCoordinate: topRightCordinate,
+                                  bottomLeftCoordinate: bottomLeftCordinate,
+                                  completition: returnToView(_:error:))
 
-        if lastCoordinate == nil {
-            lastCoordinate = coordinate
+        if lastVisitedCoordinate == nil {
+            lastVisitedCoordinate = coordinate
         }
 
-        let locationFrom = CLLocation(latitude: lastCoordinate.latitude,
-                                      longitude: lastCoordinate.longitude)
+        let locationFrom = CLLocation(latitude: lastVisitedCoordinate.latitude,
+                                      longitude: lastVisitedCoordinate.longitude)
         let locationTo = CLLocation(latitude: coordinate.latitude,
                                     longitude: coordinate.longitude)
         let coordinatEdgeLocation = CLLocation(latitude: topRightCordinate.latitude,
@@ -110,17 +139,20 @@ extension PointsInteractor: PointsInteractorInput {
 
         guard
             locationTo.distance(from: locationFrom) > searchRadius / 2.0 || isFirstLaunch else {
+                DispatchQueue.main.async {
+                    self.output.didFinishUpdating()
+                }
                 return
         }
 
         isFirstLaunch = false
-        lastCoordinate = coordinate
+        lastVisitedCoordinate = coordinate
 
         guard reachability.connection != .none else {
             return
         }
-        
-        networkService.getPoints(for: coordinate, with: searchRadius) { pointsJSON, error in
+
+        pointService.getPoints(for: coordinate, with: searchRadius) { pointsJSON, error in
 
             guard
                 error == nil,
@@ -128,12 +160,19 @@ extension PointsInteractor: PointsInteractorInput {
                     return
             }
 
+            guard !pointsJSON.isEmpty else {
+                DispatchQueue.main.async {
+                    print("ТОЧЕК В РАДИУСЕ ПОИСКА НЕТ")
+                    self.output.didFinishUpdating()
+                }
+                return
+            }
+
             self.coreDataService.savePoints(pointsJSON, completition: self.returnToView(_:error:))
         }
     }
 
     func tap(on point: PointPresentation) {
-
         coreDataService.getPartner(withId: point.partnerName) { partner, error in
 
             guard
@@ -142,7 +181,7 @@ extension PointsInteractor: PointsInteractorInput {
                     return
             }
 
-            self.imageDownloaderService.downloadImage(named: point.picture,
+            self.imageDownloadService.downloadImage(named: point.picture,
                                                       withLastModified: partner.pictureLastModified,
                                                       withPixelSize: "mdpi")
             { image, lastModified, error in
@@ -158,7 +197,8 @@ extension PointsInteractor: PointsInteractorInput {
                     self.output.didLoad(image, for: point)
                 }
 
-                self.coreDataService.savePartner(withId: point.partnerName, lastModified: lastModified) { _ in
+                self.coreDataService.savePartner(withId: point.partnerName,
+                                                 lastModified: lastModified) { _ in
 
                 }
             }
@@ -169,7 +209,9 @@ extension PointsInteractor: PointsInteractorInput {
 extension PointsInteractor: LocationServiceDelegate {
 
     func didAuthorize() {
-        output.didAuthorizeLocation()
+        DispatchQueue.main.async {
+            self.output.didAuthorizeLocation()
+        }
     }
 
     func didUpdate(_ coordinates: CLLocationCoordinate2D) {

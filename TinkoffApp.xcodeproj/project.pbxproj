@@ -42,13 +42,14 @@
 		8AB3C19F1FE2E27700BAE5C0 /* Point+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3C19B1FE2E27700BAE5C0 /* Point+CoreDataProperties.swift */; };
 		8AB3C1A01FE2E27700BAE5C0 /* Partner+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3C19C1FE2E27700BAE5C0 /* Partner+CoreDataClass.swift */; };
 		8AB3C1A11FE2E27700BAE5C0 /* Partner+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB3C19D1FE2E27700BAE5C0 /* Partner+CoreDataProperties.swift */; };
-		8ACADBAF1FE6EA7100F1F378 /* PointService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACADBAE1FE6EA7100F1F378 /* PointService.swift */; };
-		8ACADBB21FE6EA8400F1F378 /* PartnerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACADBB11FE6EA8400F1F378 /* PartnerService.swift */; };
+		8ACADBAF1FE6EA7100F1F378 /* PointNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACADBAE1FE6EA7100F1F378 /* PointNetworkService.swift */; };
+		8ACADBB21FE6EA8400F1F378 /* PartnerNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACADBB11FE6EA8400F1F378 /* PartnerNetworkService.swift */; };
 		8ACADBB41FE6EECB00F1F378 /* ImageDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACADBB31FE6EECB00F1F378 /* ImageDownloadService.swift */; };
 		8ACADBBA1FE711EA00F1F378 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ACADBB91FE711EA00F1F378 /* GoogleMaps.framework */; };
 		8AF1CC771FE50F9A00D67198 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF1CC761FE50F9A00D67198 /* InfoView.swift */; };
 		8AF1CC791FE50FA500D67198 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AF1CC781FE50FA500D67198 /* InfoView.xib */; };
 		8AF1CC7B1FE50FCC00D67198 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF1CC7A1FE50FCC00D67198 /* BaseView.swift */; };
+		8AF4C0661FE8530C005B4CD5 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF4C0651FE8530C005B4CD5 /* StringExt.swift */; };
 		8AF791B71FE2FDBE0074290C /* PartnerMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF791B61FE2FDBE0074290C /* PartnerMapper.swift */; };
 		8AF791BA1FE3013C0074290C /* TinkoffError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF791B91FE3013C0074290C /* TinkoffError.swift */; };
 		8AF791C11FE44D160074290C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF791C01FE44D160074290C /* CoreDataStack.swift */; };
@@ -124,14 +125,15 @@
 		8AB3C19B1FE2E27700BAE5C0 /* Point+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Point+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8AB3C19C1FE2E27700BAE5C0 /* Partner+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Partner+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8AB3C19D1FE2E27700BAE5C0 /* Partner+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Partner+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		8ACADBAE1FE6EA7100F1F378 /* PointService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointService.swift; sourceTree = "<group>"; };
-		8ACADBB11FE6EA8400F1F378 /* PartnerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerService.swift; sourceTree = "<group>"; };
+		8ACADBAE1FE6EA7100F1F378 /* PointNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointNetworkService.swift; sourceTree = "<group>"; };
+		8ACADBB11FE6EA8400F1F378 /* PartnerNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerNetworkService.swift; sourceTree = "<group>"; };
 		8ACADBB31FE6EECB00F1F378 /* ImageDownloadService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadService.swift; sourceTree = "<group>"; };
 		8ACADBB91FE711EA00F1F378 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		8AF1CC701FE50A8A00D67198 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Pods/GoogleMaps/Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
 		8AF1CC761FE50F9A00D67198 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		8AF1CC781FE50FA500D67198 /* InfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
 		8AF1CC7A1FE50FCC00D67198 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		8AF4C0651FE8530C005B4CD5 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		8AF791B61FE2FDBE0074290C /* PartnerMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartnerMapper.swift; sourceTree = "<group>"; };
 		8AF791B91FE3013C0074290C /* TinkoffError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkoffError.swift; sourceTree = "<group>"; };
 		8AF791C01FE44D160074290C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -346,19 +348,17 @@
 				8AB3C17E1FE2D5CF00BAE5C0 /* Location */,
 				8AB3C16D1FE2B76E00BAE5C0 /* Network */,
 				8AB3C1541FE27DD600BAE5C0 /* CoreData */,
-				8AB3C1531FE27DCE00BAE5C0 /* ImageDownloader */,
+				8AB3C1531FE27DCE00BAE5C0 /* ImageDownload */,
 			);
 			path = Services;
 			sourceTree = "<group>";
 		};
-		8AB3C1531FE27DCE00BAE5C0 /* ImageDownloader */ = {
+		8AB3C1531FE27DCE00BAE5C0 /* ImageDownload */ = {
 			isa = PBXGroup;
 			children = (
-				8ACADBA81FE6D89E00F1F378 /* Remote */,
-				8ACADBA71FE6D89400F1F378 /* Local */,
 				8ACADBB31FE6EECB00F1F378 /* ImageDownloadService.swift */,
 			);
-			path = ImageDownloader;
+			path = ImageDownload;
 			sourceTree = "<group>";
 		};
 		8AB3C1541FE27DD600BAE5C0 /* CoreData */ = {
@@ -393,17 +393,10 @@
 		8AB3C15B1FE288D200BAE5C0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				8AB3C15C1FE288D900BAE5C0 /* Logger */,
 				8AA0775D1FE5A98900F94432 /* Reachability.swift */,
+				8AF4C0651FE8530C005B4CD5 /* StringExt.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		8AB3C15C1FE288D900BAE5C0 /* Logger */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Logger;
 			sourceTree = "<group>";
 		};
 		8AB3C15D1FE2891000BAE5C0 /* Configs */ = {
@@ -483,24 +476,10 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
-		8ACADBA71FE6D89400F1F378 /* Local */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Local;
-			sourceTree = "<group>";
-		};
-		8ACADBA81FE6D89E00F1F378 /* Remote */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Remote;
-			sourceTree = "<group>";
-		};
 		8ACADBAC1FE6EA5800F1F378 /* Partner */ = {
 			isa = PBXGroup;
 			children = (
-				8ACADBB11FE6EA8400F1F378 /* PartnerService.swift */,
+				8ACADBB11FE6EA8400F1F378 /* PartnerNetworkService.swift */,
 			);
 			path = Partner;
 			sourceTree = "<group>";
@@ -508,7 +487,7 @@
 		8ACADBAD1FE6EA5F00F1F378 /* Point */ = {
 			isa = PBXGroup;
 			children = (
-				8ACADBAE1FE6EA7100F1F378 /* PointService.swift */,
+				8ACADBAE1FE6EA7100F1F378 /* PointNetworkService.swift */,
 			);
 			path = Point;
 			sourceTree = "<group>";
@@ -980,13 +959,14 @@
 				8AB3C1611FE28A2100BAE5C0 /* ImageDownloadServiceConfig.swift in Sources */,
 				8AF791C11FE44D160074290C /* CoreDataStack.swift in Sources */,
 				8AF1CC771FE50F9A00D67198 /* InfoView.swift in Sources */,
-				8ACADBB21FE6EA8400F1F378 /* PartnerService.swift in Sources */,
+				8ACADBB21FE6EA8400F1F378 /* PartnerNetworkService.swift in Sources */,
 				8AB3C19E1FE2E27700BAE5C0 /* Point+CoreDataClass.swift in Sources */,
+				8AF4C0661FE8530C005B4CD5 /* StringExt.swift in Sources */,
 				8AA0776A1FE68E0900F94432 /* PointsInteractorInput.swift in Sources */,
 				8AB3C1A11FE2E27700BAE5C0 /* Partner+CoreDataProperties.swift in Sources */,
 				8AF791B71FE2FDBE0074290C /* PartnerMapper.swift in Sources */,
 				8AF791C31FE48E9C0074290C /* LocationService.swift in Sources */,
-				8ACADBAF1FE6EA7100F1F378 /* PointService.swift in Sources */,
+				8ACADBAF1FE6EA7100F1F378 /* PointNetworkService.swift in Sources */,
 				367C54BC261A4C36E72D8CD3 /* PointsConfigurator.swift in Sources */,
 				D7A0DDF34457D3440FDDCF0B /* PointsIncreaseInitializer.swift in Sources */,
 				8AF791C71FE4A6560074290C /* PointMapper.swift in Sources */,

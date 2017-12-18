@@ -25,15 +25,14 @@ class ImageDownloadService: NSObject {
             lastModifiedToSend = lastModified!
         }
 
-        let url = config.downloadImagesURL.appending("\(pixelSize)/\(name)")
-
         guard  reachability.connection != .none else {
             print("[INFO] КАРТИНКА ПОЛУЧЕНА ОФФЛАЙ")
             return completition(getImageData(with: name), lastModifiedToSend, nil)
         }
 
-        networkService.makeCall(withMethod: "GET",
-                                toUrl: url,
+        networkService.makeCall(withMethod: .GET,
+                                withRequest: .images,
+                                withCustomUrlSuffix: "\(pixelSize)/\(name)",
                                 lastModified: lastModifiedToSend)
         { imageData, headers, error in
 
@@ -52,7 +51,7 @@ class ImageDownloadService: NSObject {
             }
             print("[INFO] ЗАКОНЧИЛОСЬ ПОЛУЧЕНИЕ КАРТИНКИ")
             self.save(imageData, withName: name)
-            completition(UIImage(data: imageData), headers["Last-Modified"] as! String, error)
+            completition(UIImage(data: imageData), (headers["Last-Modified"] as! String), error)
         }
     }
 

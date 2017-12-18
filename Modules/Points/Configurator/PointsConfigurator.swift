@@ -13,9 +13,13 @@ class PointsModuleConfigurator {
         let presenter = PointsPresenter()
         presenter.view = viewController
 
-        let networkServiceConfig = NetworkServiceConfig(partnersListURL: AppConfig.partnersURL,
-                                                        pointsURL: AppConfig.pointsURL)
-        let networkService = NetworkService(config: networkServiceConfig)
+        let networkServiceConfig = NetworkServiceConfig(partnersURL: AppConfig.partnersURL,
+                                                        pointsURL: AppConfig.pointsURL,
+                                                        imagesURL: AppConfig.downloadImagesURL)
+        
+        let networkService = NetworkService(networkConfig: networkServiceConfig)
+        let partnerService = PartnerNetworkService(networkService: networkService)
+        let pointService = PointNetworkService(networkService: networkService)
 
         let imageDownloaderConfig = ImageDownloadServiceConfig(downloadImagesURL: AppConfig.downloadImagesURL,
                                                                placeholderImageName: "ImagePlaceholder")
@@ -26,8 +30,9 @@ class PointsModuleConfigurator {
 
         let interactor = PointsInteractor()
         interactor.output = presenter
-        interactor.imageDownloaderService = imageDownloaderService
-        interactor.networkService = networkService
+        interactor.imageDownloadService = imageDownloaderService
+        interactor.partnerService = partnerService
+        interactor.pointService = pointService
         interactor.locationService = locationService
         interactor.coreDataService = CoreDataService(coreDataStack: CoreDataStack())
 

@@ -4,9 +4,12 @@ class PartnerMapper {
 
     func map(_ partner: Partner,
              to partnerPresentation: PartnerPresentation) -> PartnerPresentation {
+
+        // Да, тут нужна проверка на опшинал
         let mappedPartnerPresentation = PartnerPresentation(id: partner.id!,
                                                             name: partner.name!,
-                                                            picture: partner.picture!)
+                                                            picture: partner.picture!,
+                                                            info: partner.info!)
         return mappedPartnerPresentation
     }
 

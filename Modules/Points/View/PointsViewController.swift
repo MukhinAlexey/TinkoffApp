@@ -88,8 +88,13 @@ extension PointsViewController: PointsPresenterOutput {
         mapView.settings.myLocationButton = true
     }
 
-    func didLoad(_ image: UIImage, for point: PointPresentation) {
+    func didLoad(_ image: UIImage,
+                 for point: PointPresentation) {
         infoView.set(image)
+    }
+
+    func didFinishUpdating() {
+        statusLabel.set("Обновлено")
     }
 
     func didUpdate(_ coordinates: CLLocationCoordinate2D) {
@@ -119,9 +124,20 @@ extension PointsViewController: PointsPresenterOutput {
         self.partners = partners
     }
 
-    func didGet(error: Error) {
+    func didNotGetPartners(with errorMessage: String) {
         let alert = UIAlertController(title: "Ошибка",
-                                      message: "Произошла ошибка",
+                                      message: errorMessage,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "ОК",
+                                      style: .default) { _ in
+                                        self.output.viewIsReady()
+            })
+        present(alert, animated: true, completion: nil)
+    }
+
+    func didGet(_ errorMessage: String) {
+        let alert = UIAlertController(title: "Ошибка",
+                                      message: errorMessage,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "ОК",
                                       style: .default,
@@ -179,7 +195,7 @@ extension PointsViewController: GMSMapViewDelegate {
 
     func mapView(_ mapView: GMSMapView,
                  didTap marker: GMSMarker) -> Bool {
-        self.showInfoView()
+        showInfoView()
         showingInfoViewIsInProgress = true
         didUpdate(marker.position)
         let point = pointsOnMap.first(where: {
@@ -189,12 +205,9 @@ extension PointsViewController: GMSMapViewDelegate {
             $0.id == point.partnerName
         }!
         point.picture = partner.picture
-        infoView.set(partner.name)
+        infoView.setPartnerName(partner.name)
+        infoView.setPartnerInfo(partner.info)
         output.tap(on: point)
         return true
-    }
-
-    func mapView(_ mapView: GMSMapView, didTap overlay: GMSOverlay) {
-        //showLegend()
     }
 }
